@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import logoLight from "@/assets/logo-light.jpg";
+import logo from "@/assets/logo.png";
 
 export const Footer = () => {
   const scrollToSection = (id: string) => {
@@ -12,9 +12,9 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
             <img 
-              src={logoLight} 
+              src={logo} 
               alt="STOOTS" 
-              className="h-12 w-auto mb-4"
+              className="h-14 w-auto mb-4"
             />
             <p className="text-primary-foreground/80 leading-relaxed mb-6">
               A plataforma premium que transforma dados em clareza, decisões em resultados e investimentos em liberdade financeira.

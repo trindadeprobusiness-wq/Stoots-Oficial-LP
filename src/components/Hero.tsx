@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import heroDashboard from "@/assets/hero-dashboard.jpg";
-import logoLight from "@/assets/logo-light.jpg";
+import logo from "@/assets/logo.png";
 
 export const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -15,9 +15,9 @@ export const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           <div className="flex-1 text-center lg:text-left">
             <img 
-              src={logoLight} 
+              src={logo} 
               alt="STOOTS" 
-              className="h-16 w-auto mb-8 mx-auto lg:mx-0"
+              className="h-20 w-auto mb-8 mx-auto lg:mx-0"
             />
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
