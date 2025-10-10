@@ -1,4 +1,5 @@
 import { newsTimeline } from "@/data/mockMarketData";
+import { ExternalLink } from "lucide-react";
 
 export const NewsTimeline = () => {
   return (
@@ -26,9 +27,12 @@ export const NewsTimeline = () => {
 
         <div className="space-y-6">
           {newsTimeline.map((item, index) => (
-            <div
+            <a
               key={index}
-              className="flex gap-6 p-6 bg-[hsl(var(--bg-dark-2))] rounded-xl hover:bg-[hsl(var(--bg-dark-2))]/80 transition-smooth cursor-pointer group animate-fade-up"
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-6 p-6 bg-[hsl(var(--bg-dark-2))] rounded-xl hover:bg-[hsl(var(--bg-dark-2))]/80 transition-smooth cursor-pointer group animate-fade-up block relative"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex-shrink-0">
@@ -42,14 +46,18 @@ export const NewsTimeline = () => {
                   <span>•</span>
                   <span className="text-accent-cyan">{item.source}</span>
                 </div>
-                <h3 className="text-lg font-semibold text-primary-foreground mb-2 group-hover:text-accent-cyan transition-smooth">
+                <h3 className="text-lg font-semibold text-primary-foreground mb-2 group-hover:text-accent-cyan group-hover:underline transition-smooth">
                   {item.title}
                 </h3>
                 <p className="text-primary-foreground/70 text-sm">
                   {item.summary}
                 </p>
               </div>
-            </div>
+              <ExternalLink 
+                className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity text-primary-foreground/60" 
+                size={18} 
+              />
+            </a>
           ))}
         </div>
       </div>

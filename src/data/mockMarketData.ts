@@ -17,7 +17,8 @@ export const marketNews = [
     category: "AÇÕES",
     image: "/src/assets/market-news-acoes.jpg",
     source: "Valor Econômico",
-    timestamp: "Há 2 horas"
+    timestamp: "Há 2 horas",
+    url: "https://valor.globo.com/financas/"
   },
   {
     id: 2,
@@ -26,7 +27,8 @@ export const marketNews = [
     category: "CRIPTO",
     image: "/src/assets/market-news-cripto.jpg",
     source: "CoinDesk",
-    timestamp: "Há 4 horas"
+    timestamp: "Há 4 horas",
+    url: "https://www.coindesk.com/markets/"
   },
   {
     id: 3,
@@ -35,16 +37,17 @@ export const marketNews = [
     category: "DIVIDENDOS",
     image: "/src/assets/market-news-dividendos.jpg",
     source: "InfoMoney",
-    timestamp: "Há 6 horas"
+    timestamp: "Há 6 horas",
+    url: "https://www.infomoney.com.br/mercados/"
   }
 ];
 
 export const newsTimeline = [
-  { time: "06:01", date: "10 de outubro 2025", source: "Exame", title: "Petrobras anuncia novo plano de investimentos", summary: "Estatal prevê R$ 102 bilhões em investimentos até 2027" },
-  { time: "07:23", date: "10 de outubro 2025", source: "Estadão", title: "Vale reduz projeção de produção de minério", summary: "Mineradora ajusta expectativas para o segundo semestre" },
-  { time: "08:45", date: "10 de outubro 2025", source: "Folha", title: "Banco Central mantém Selic em 10,75% ao ano", summary: "Decisão estava amplamente prevista pelo mercado" },
-  { time: "09:12", date: "10 de outubro 2025", source: "InfoMoney", title: "Magazine Luiza apresenta resultados do 3T", summary: "Varejista surpreende mercado com lucro acima do esperado" },
-  { time: "10:34", date: "10 de outubro 2025", source: "Bloomberg", title: "Dólar cai para R$ 4,87 com entrada de capital externo", summary: "Moeda americana registra queda pelo terceiro dia consecutivo" },
+  { time: "06:01", date: "10 de outubro 2025", source: "Exame", title: "Petrobras anuncia novo plano de investimentos", summary: "Estatal prevê R$ 102 bilhões em investimentos até 2027", url: "https://exame.com/invest/" },
+  { time: "07:23", date: "10 de outubro 2025", source: "Estadão", title: "Vale reduz projeção de produção de minério", summary: "Mineradora ajusta expectativas para o segundo semestre", url: "https://www.estadao.com.br/economia/" },
+  { time: "08:45", date: "10 de outubro 2025", source: "Folha", title: "Banco Central mantém Selic em 10,75% ao ano", summary: "Decisão estava amplamente prevista pelo mercado", url: "https://www1.folha.uol.com.br/mercado/" },
+  { time: "09:12", date: "10 de outubro 2025", source: "InfoMoney", title: "Magazine Luiza apresenta resultados do 3T", summary: "Varejista surpreende mercado com lucro acima do esperado", url: "https://www.infomoney.com.br/negocios/" },
+  { time: "10:34", date: "10 de outubro 2025", source: "Bloomberg", title: "Dólar cai para R$ 4,87 com entrada de capital externo", summary: "Moeda americana registra queda pelo terceiro dia consecutivo", url: "https://www.bloomberg.com.br/" },
 ];
 
 export const highestGains = [
@@ -95,20 +98,23 @@ export const featuredArticles = [
     title: "Como diversificar sua carteira de investimentos em 2025",
     summary: "Estratégias comprovadas para distribuir seus ativos e reduzir riscos no mercado brasileiro.",
     image: "/src/assets/article-diversificacao.jpg",
-    category: "Educação Financeira"
+    category: "Educação Financeira",
+    url: "https://www.infomoney.com.br/guias/diversificacao/"
   },
   {
     id: 2,
     title: "Análise completa: As melhores ações para dividendos",
     summary: "Conheça os ativos que têm distribuído os maiores proventos nos últimos 12 meses.",
     image: "/src/assets/article-analise.jpg",
-    category: "Análise"
+    category: "Análise",
+    url: "https://www.infomoney.com.br/guias/dividendos/"
   },
   {
     id: 3,
     title: "Tutorial: Como usar o Índice Stoots para escolher ações",
     summary: "Aprenda a utilizar nossa metodologia exclusiva para avaliar empresas e tomar decisões informadas.",
     image: "/src/assets/article-tutorial.jpg",
-    category: "Tutorial"
+    category: "Tutorial",
+    url: "https://exame.com/invest/guia/acoes/"
   }
 ];

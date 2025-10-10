@@ -1,6 +1,6 @@
 import { marketNews } from "@/data/mockMarketData";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 export const MarketNews = () => {
   return (
@@ -20,7 +20,12 @@ export const MarketNews = () => {
 
         <div className="grid md:grid-cols-2 gap-6">
           {/* Featured News (Large) */}
-          <div className="md:row-span-2 group cursor-pointer">
+          <a 
+            href={marketNews[0].url} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="md:row-span-2 group cursor-pointer block"
+          >
             <div className="relative h-full min-h-[500px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
               <img 
                 src={marketNews[0].image} 
@@ -28,11 +33,15 @@ export const MarketNews = () => {
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10" />
+              <ExternalLink 
+                className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-white z-30" 
+                size={20} 
+              />
               <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
                 <span className="inline-block px-3 py-1 bg-accent-cyan text-white text-xs font-semibold rounded-full mb-4">
                   {marketNews[0].category}
                 </span>
-                <h3 className="text-2xl font-semibold text-primary-foreground mb-3 leading-tight">
+                <h3 className="text-2xl font-semibold text-primary-foreground mb-3 leading-tight group-hover:underline transition-all">
                   {marketNews[0].title}
                 </h3>
                 <p className="text-primary-foreground/80 text-sm mb-3">
@@ -45,11 +54,17 @@ export const MarketNews = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
 
           {/* Secondary News */}
           {marketNews.slice(1).map((news) => (
-            <div key={news.id} className="group cursor-pointer">
+            <a 
+              key={news.id}
+              href={news.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group cursor-pointer block"
+            >
               <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
                 <img 
                   src={news.image} 
@@ -57,11 +72,15 @@ export const MarketNews = () => {
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10" />
+                <ExternalLink 
+                  className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-white z-30" 
+                  size={20} 
+                />
                 <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
                   <span className="inline-block px-3 py-1 bg-accent-purple text-white text-xs font-semibold rounded-full mb-3">
                     {news.category}
                   </span>
-                  <h3 className="text-lg font-semibold text-primary-foreground mb-2 leading-tight">
+                  <h3 className="text-lg font-semibold text-primary-foreground mb-2 leading-tight group-hover:underline transition-all">
                     {news.title}
                   </h3>
                   <div className="flex items-center gap-2 text-primary-foreground/60 text-xs">
@@ -71,7 +90,7 @@ export const MarketNews = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
