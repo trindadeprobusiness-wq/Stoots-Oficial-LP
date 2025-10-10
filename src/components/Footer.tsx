@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import qrCode from "@/assets/qr-code-stoots.png";
+import { Facebook, Instagram, Linkedin, Twitter, Apple, Smartphone } from "lucide-react";
 
 export const Footer = () => {
   const scrollToSection = (id: string) => {
@@ -145,25 +146,38 @@ export const Footer = () => {
 
           {/* Column 4: Download App */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Baixe o Stoots</h3>
-            <div className="space-y-4">
-              <div className="w-32 h-32 bg-white rounded-lg p-2 flex items-center justify-center">
-                <div className="text-xs text-center text-foreground">QR Code</div>
+            <h3 className="font-semibold text-lg mb-4 text-white">Baixe o Stoots</h3>
+            <div className="flex flex-col items-start gap-4">
+              {/* QR Code */}
+              <div className="bg-white p-4 rounded-2xl shadow-lg">
+                <img 
+                  src={qrCode} 
+                  alt="QR Code para baixar o app Stoots" 
+                  className="w-28 h-28 rounded-lg"
+                />
               </div>
-              <div className="space-y-2">
+              
+              {/* App Store Badges */}
+              <div className="flex flex-col gap-3 w-full">
                 <Button 
                   variant="outline" 
-                  size="sm"
-                  className="w-full border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+                  className="w-full justify-start gap-3 bg-white/5 border-white/20 hover:bg-white/10 text-white h-12"
                 >
-                  App Store
+                  <Apple className="w-6 h-6" />
+                  <div className="flex flex-col items-start text-left">
+                    <span className="text-[10px] leading-none">Baixar na</span>
+                    <span className="text-sm font-semibold leading-none mt-0.5">App Store</span>
+                  </div>
                 </Button>
                 <Button 
                   variant="outline" 
-                  size="sm"
-                  className="w-full border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+                  className="w-full justify-start gap-3 bg-white/5 border-white/20 hover:bg-white/10 text-white h-12"
                 >
-                  Google Play
+                  <Smartphone className="w-6 h-6" />
+                  <div className="flex flex-col items-start text-left">
+                    <span className="text-[10px] leading-none">Disponível no</span>
+                    <span className="text-sm font-semibold leading-none mt-0.5">Google Play</span>
+                  </div>
                 </Button>
               </div>
             </div>

@@ -22,13 +22,13 @@ export const FeaturedArticles = () => {
           {featuredArticles.map((article) => (
             <div
               key={article.id}
-              className="bg-card rounded-2xl overflow-hidden shadow-elegant hover:shadow-premium transition-smooth cursor-pointer group"
+              className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group"
             >
-              <div className="h-48 overflow-hidden">
+              <div className="h-52 overflow-hidden">
                 <img 
                   src={article.image} 
                   alt={article.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"
                 />
               </div>
               <div className="p-6">

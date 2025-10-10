@@ -12,31 +12,31 @@ export const marketIndices = [
 export const marketNews = [
   {
     id: 1,
-    title: "Ibovespa fecha em alta com expectativa de corte de juros",
-    summary: "Principais índices brasileiros registram ganhos com investidores atentos às sinalizações do Banco Central.",
+    title: "Bolsa atinge nova máxima histórica em semana de otimismo",
+    summary: "Ibovespa fecha em alta de 1,5% e renova recorde com fluxo estrangeiro positivo e perspectivas favoráveis para o mercado brasileiro.",
     category: "AÇÕES",
-    image: "/placeholder.svg",
-    source: "InfoMoney",
-    timestamp: "2h atrás",
+    image: "/src/assets/market-news-acoes.jpg",
+    source: "Valor Econômico",
+    timestamp: "Há 2 horas"
   },
   {
     id: 2,
-    title: "Bitcoin atinge US$ 65 mil com aprovação de novos ETFs",
-    summary: "Criptomoeda se recupera após período de volatilidade.",
+    title: "Bitcoin supera US$ 65 mil com expectativa de aprovação de novos ETFs",
+    summary: "Criptomoeda registra alta de 8% na semana, impulsionada por expectativas regulatórias positivas nos Estados Unidos.",
     category: "CRIPTO",
-    image: "/placeholder.svg",
+    image: "/src/assets/market-news-cripto.jpg",
     source: "CoinDesk",
-    timestamp: "4h atrás",
+    timestamp: "Há 4 horas"
   },
   {
     id: 3,
-    title: "Dividendos: empresas distribuem R$ 45 bi no trimestre",
-    summary: "Setor bancário lidera pagamentos aos acionistas.",
+    title: "Petrobras anuncia dividendos extraordinários de R$ 2 bilhões",
+    summary: "Empresa estatal divulga proventos acima do esperado, beneficiando acionistas e elevando yield da companhia.",
     category: "DIVIDENDOS",
-    image: "/placeholder.svg",
-    source: "Valor Econômico",
-    timestamp: "5h atrás",
-  },
+    image: "/src/assets/market-news-dividendos.jpg",
+    source: "InfoMoney",
+    timestamp: "Há 6 horas"
+  }
 ];
 
 export const newsTimeline = [
@@ -92,23 +92,23 @@ export const documentsAgenda = [
 export const featuredArticles = [
   {
     id: 1,
-    title: "Como construir uma carteira diversificada de dividendos",
-    summary: "Estratégias práticas para investidores que buscam renda passiva consistente.",
-    image: "/placeholder.svg",
-    category: "Estratégia",
+    title: "Como diversificar sua carteira de investimentos em 2025",
+    summary: "Estratégias comprovadas para distribuir seus ativos e reduzir riscos no mercado brasileiro.",
+    image: "/src/assets/article-diversificacao.jpg",
+    category: "Educação Financeira"
   },
   {
     id: 2,
-    title: "Análise: As melhores ações para 2025",
-    summary: "Analistas apontam os setores e empresas mais promissores para o próximo ano.",
-    image: "/placeholder.svg",
-    category: "Análise",
+    title: "Análise completa: As melhores ações para dividendos",
+    summary: "Conheça os ativos que têm distribuído os maiores proventos nos últimos 12 meses.",
+    image: "/src/assets/article-analise.jpg",
+    category: "Análise"
   },
   {
     id: 3,
-    title: "Guia completo: Como usar o Diagrama do Cerrado",
-    summary: "Aprenda a avaliar seus ativos com a metodologia exclusiva do Stoots.",
-    image: "/placeholder.svg",
-    category: "Tutorial",
-  },
+    title: "Tutorial: Como usar o Índice Stoots para escolher ações",
+    summary: "Aprenda a utilizar nossa metodologia exclusiva para avaliar empresas e tomar decisões informadas.",
+    image: "/src/assets/article-tutorial.jpg",
+    category: "Tutorial"
+  }
 ];

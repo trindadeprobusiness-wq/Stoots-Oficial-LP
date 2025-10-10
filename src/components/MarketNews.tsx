@@ -21,13 +21,13 @@ export const MarketNews = () => {
         <div className="grid md:grid-cols-2 gap-6">
           {/* Featured News (Large) */}
           <div className="md:row-span-2 group cursor-pointer">
-            <div className="relative h-full rounded-2xl overflow-hidden transition-smooth hover:scale-[1.02] hover:shadow-premium">
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/60 to-transparent z-10" />
+            <div className="relative h-full min-h-[500px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
               <img 
                 src={marketNews[0].image} 
                 alt={marketNews[0].title}
-                className="w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10" />
               <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
                 <span className="inline-block px-3 py-1 bg-accent-cyan text-white text-xs font-semibold rounded-full mb-4">
                   {marketNews[0].category}
@@ -50,13 +50,13 @@ export const MarketNews = () => {
           {/* Secondary News */}
           {marketNews.slice(1).map((news) => (
             <div key={news.id} className="group cursor-pointer">
-              <div className="relative h-64 rounded-2xl overflow-hidden transition-smooth hover:scale-[1.02] hover:shadow-premium">
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/60 to-transparent z-10" />
+              <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
                 <img 
                   src={news.image} 
                   alt={news.title}
-                  className="w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
                   <span className="inline-block px-3 py-1 bg-accent-purple text-white text-xs font-semibold rounded-full mb-3">
                     {news.category}
