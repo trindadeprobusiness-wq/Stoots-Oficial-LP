@@ -24,8 +24,8 @@ export const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
           <div className="flex-1 text-center lg:text-left max-w-2xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-primary-foreground mb-6 leading-tight">
-              Investiu?<br />
-              <span className="font-semibold">Seu próximo passo é usar o Stoots.</span>
+              Controle total dos seus<br />
+              <span className="font-semibold">investimentos em um só lugar.</span>
             </h1>
             
             <p className="text-lg md:text-xl text-primary-foreground/90 mb-10 leading-relaxed">

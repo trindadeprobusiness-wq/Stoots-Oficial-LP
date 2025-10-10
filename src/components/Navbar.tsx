@@ -18,18 +18,12 @@ export const Navbar = () => {
           <img 
             src={logo} 
             alt="STOOTS" 
-            className="h-12 w-auto cursor-pointer"
+            className="h-14 w-auto cursor-pointer drop-shadow-lg hover:drop-shadow-xl transition-smooth"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <button 
-              onClick={() => scrollToSection("market-news")}
-              className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth text-sm font-medium"
-            >
-              Mercado
-            </button>
             <button 
               onClick={() => scrollToSection("features")}
               className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth text-sm font-medium"
@@ -71,12 +65,6 @@ export const Navbar = () => {
         {isOpen && (
           <div className="md:hidden py-6 border-t border-primary-foreground/10">
             <div className="flex flex-col gap-4">
-              <button 
-                onClick={() => scrollToSection("market-news")}
-                className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth text-sm font-medium text-left"
-              >
-                Mercado
-              </button>
               <button 
                 onClick={() => scrollToSection("features")}
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth text-sm font-medium text-left"

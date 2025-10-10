@@ -1,4 +1,4 @@
-import { Calculator, GitCompare, Briefcase, FileText, TrendingUp } from "lucide-react";
+import { Calculator, GitCompare, Briefcase, FileText } from "lucide-react";
 
 const resources = [
   {
@@ -25,19 +25,13 @@ const resources = [
     description: "Gere relatórios completos da sua carteira.",
     gradient: "gradient-card-4",
   },
-  {
-    icon: TrendingUp,
-    title: "Índice Stoots",
-    description: "Avalie seus ativos com nossa metodologia exclusiva.",
-    gradient: "gradient-card-5",
-  },
 ];
 
 export const ResourceCards = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {resources.map((resource, index) => {
             const Icon = resource.icon;
             return (
