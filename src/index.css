@@ -21,7 +21,7 @@ All colors MUST be HSL.
     --primary-foreground: 0 0% 100%;
     
     --primary-dark: 218 100% 8%;
-    --primary-light: 211 70% 50%;
+    --primary-light: 207 90% 54%;
     --primary-glow: 211 70% 60%;
 
     --secondary: 0 0% 96%;
@@ -32,6 +32,9 @@ All colors MUST be HSL.
 
     --accent: 195 100% 45%;
     --accent-foreground: 0 0% 100%;
+    
+    --accent-cyan: 188 91% 42%;
+    --accent-purple: 258 100% 65%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -42,15 +45,26 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
     
+    /* Backgrounds */
+    --bg-dark-1: 211 28% 18%;
+    --bg-dark-2: 210 29% 24%;
+    --bg-dark-3: 211 18% 21%;
+    
     /* Premium gradients */
     --gradient-primary: linear-gradient(135deg, hsl(211 70% 40%), hsl(211 70% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(218 100% 8%), hsl(211 70% 25%));
+    --gradient-hero: linear-gradient(135deg, hsl(218 100% 8%) 0%, hsl(211 70% 40%) 50%, hsl(211 85% 35%) 100%);
     --gradient-accent: linear-gradient(90deg, hsl(211 70% 40%), hsl(195 100% 45%));
+    --gradient-card-1: linear-gradient(135deg, hsl(211 70% 40%) 0%, hsl(207 90% 61%) 100%);
+    --gradient-card-2: linear-gradient(135deg, hsl(211 70% 40%) 0%, hsl(258 100% 65%) 100%);
+    --gradient-card-3: linear-gradient(135deg, hsl(258 100% 65%) 0%, hsl(261 51% 71%) 100%);
+    --gradient-card-4: linear-gradient(135deg, hsl(211 85% 35%) 0%, hsl(188 91% 42%) 100%);
+    --gradient-card-5: linear-gradient(135deg, hsl(188 91% 42%) 0%, hsl(187 69% 71%) 100%);
     
     /* Shadows */
     --shadow-elegant: 0 10px 40px -10px hsl(211 70% 40% / 0.2);
     --shadow-premium: 0 20px 60px -15px hsl(211 70% 40% / 0.3);
     --shadow-glow: 0 0 60px hsl(211 70% 60% / 0.4);
+    --shadow-neon: 0 0 40px hsl(188 91% 42% / 0.6);
     
     /* Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -80,7 +94,7 @@ All colors MUST be HSL.
     --primary-foreground: 0 0% 100%;
     
     --primary-dark: 218 100% 6%;
-    --primary-light: 211 70% 60%;
+    --primary-light: 207 90% 61%;
     --primary-glow: 211 70% 70%;
 
     --secondary: 217 33% 18%;
@@ -91,6 +105,9 @@ All colors MUST be HSL.
 
     --accent: 195 100% 50%;
     --accent-foreground: 0 0% 100%;
+    
+    --accent-cyan: 188 91% 50%;
+    --accent-purple: 258 100% 70%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
@@ -99,13 +116,23 @@ All colors MUST be HSL.
     --input: 217 33% 18%;
     --ring: 211 70% 50%;
     
+    --bg-dark-1: 211 28% 16%;
+    --bg-dark-2: 210 29% 20%;
+    --bg-dark-3: 211 18% 18%;
+    
     --gradient-primary: linear-gradient(135deg, hsl(211 70% 50%), hsl(211 70% 70%));
-    --gradient-hero: linear-gradient(135deg, hsl(218 100% 6%), hsl(211 70% 30%));
+    --gradient-hero: linear-gradient(135deg, hsl(218 100% 6%) 0%, hsl(211 70% 50%) 50%, hsl(211 85% 40%) 100%);
     --gradient-accent: linear-gradient(90deg, hsl(211 70% 50%), hsl(195 100% 50%));
+    --gradient-card-1: linear-gradient(135deg, hsl(211 70% 50%) 0%, hsl(207 90% 65%) 100%);
+    --gradient-card-2: linear-gradient(135deg, hsl(211 70% 50%) 0%, hsl(258 100% 70%) 100%);
+    --gradient-card-3: linear-gradient(135deg, hsl(258 100% 70%) 0%, hsl(261 51% 75%) 100%);
+    --gradient-card-4: linear-gradient(135deg, hsl(211 85% 40%) 0%, hsl(188 91% 50%) 100%);
+    --gradient-card-5: linear-gradient(135deg, hsl(188 91% 50%) 0%, hsl(187 69% 75%) 100%);
     
     --shadow-elegant: 0 10px 40px -10px hsl(211 70% 50% / 0.3);
     --shadow-premium: 0 20px 60px -15px hsl(211 70% 50% / 0.4);
     --shadow-glow: 0 0 60px hsl(211 70% 70% / 0.5);
+    --shadow-neon: 0 0 40px hsl(188 91% 50% / 0.6);
     
     --sidebar-background: 240 6% 10%;
     --sidebar-foreground: 240 5% 96%;
@@ -147,6 +174,26 @@ All colors MUST be HSL.
     background: var(--gradient-accent);
   }
   
+  .gradient-card-1 {
+    background: var(--gradient-card-1);
+  }
+  
+  .gradient-card-2 {
+    background: var(--gradient-card-2);
+  }
+  
+  .gradient-card-3 {
+    background: var(--gradient-card-3);
+  }
+  
+  .gradient-card-4 {
+    background: var(--gradient-card-4);
+  }
+  
+  .gradient-card-5 {
+    background: var(--gradient-card-5);
+  }
+  
   .shadow-elegant {
     box-shadow: var(--shadow-elegant);
   }
@@ -157,6 +204,10 @@ All colors MUST be HSL.
   
   .shadow-glow {
     box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-neon {
+    box-shadow: var(--shadow-neon);
   }
   
   .transition-smooth {

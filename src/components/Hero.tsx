@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import heroDashboard from "@/assets/hero-dashboard.jpg";
-import logo from "@/assets/logo.png";
 
 export const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -8,42 +8,41 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary-dark">
-      <div className="absolute inset-0 gradient-hero opacity-95" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <div className="absolute inset-0 gradient-hero" />
+      
+      {/* Geometric Background Elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-32 h-32 border border-primary-foreground/30 rounded-full animate-float" />
+        <div className="absolute bottom-20 right-10 w-48 h-48 border border-primary-foreground/30 rounded-lg rotate-45" />
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-accent-cyan/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-1/4 w-40 h-40 bg-accent-purple/20 rounded-full blur-3xl" />
+      </div>
       
       <div className="container relative z-10 px-6 py-20 mx-auto">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          <div className="flex-1 text-center lg:text-left">
-            <img 
-              src={logo} 
-              alt="STOOTS" 
-              className="h-20 w-auto mb-8 mx-auto lg:mx-0"
-            />
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
-              Domine Sua Carteira.<br />
-              Conquiste Seus Objetivos.
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
+          <div className="flex-1 text-center lg:text-left max-w-2xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-primary-foreground mb-6 leading-tight">
+              Investiu?<br />
+              <span className="font-semibold">Seu próximo passo é usar o Stoots.</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              A plataforma premium que transforma dados em clareza, decisões em resultados e investimentos em liberdade financeira.
+            <p className="text-lg md:text-xl text-primary-foreground/90 mb-10 leading-relaxed">
+              Controle seus investimentos, personalize sua carteira e acompanhe o mercado em tempo real.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-3 max-w-xl">
+              <Input 
+                type="email"
+                placeholder="Digite seu e-mail"
+                className="h-14 px-6 bg-white text-foreground border-0 focus:ring-2 focus:ring-accent-cyan text-base"
+              />
               <Button 
                 size="lg" 
-                className="text-lg px-8 py-6 bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow transition-smooth"
+                className="h-14 px-8 bg-accent-cyan hover:bg-accent-cyan/90 text-white shadow-neon transition-smooth whitespace-nowrap"
                 onClick={() => scrollToSection("pricing")}
               >
-                Teste Gratuitamente
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="text-lg px-8 py-6 border-2 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 transition-smooth"
-                onClick={() => scrollToSection("pricing")}
-              >
-                Ver Planos
+                Crie sua conta gratuita
               </Button>
             </div>
           </div>
@@ -52,15 +51,10 @@ export const Hero = () => {
             <img 
               src={heroDashboard} 
               alt="Dashboard STOOTS" 
-              className="w-full h-auto rounded-2xl shadow-premium transition-smooth hover:scale-105"
+              className="w-full h-auto rounded-2xl shadow-premium transition-smooth animate-float"
+              style={{ animationDuration: "4s" }}
             />
           </div>
-        </div>
-      </div>
-      
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary-foreground/30 rounded-full flex justify-center">
-          <div className="w-1.5 h-3 bg-primary-foreground/50 rounded-full mt-2" />
         </div>
       </div>
     </section>
