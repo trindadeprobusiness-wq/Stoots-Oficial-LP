@@ -1,3 +1,10 @@
+import marketNewsAcoes from "@/assets/market-news-acoes.jpg";
+import marketNewsCripto from "@/assets/market-news-cripto.jpg";
+import marketNewsDividendos from "@/assets/market-news-dividendos.jpg";
+import articleDiversificacao from "@/assets/article-diversificacao.jpg";
+import articleAnalise from "@/assets/article-analise.jpg";
+import articleTutorial from "@/assets/article-tutorial.jpg";
+
 export const marketIndices = [
   { ticker: "IBOV", value: "141.581,00", change: -0.09, trending: "down" },
   { ticker: "IFIX", value: "3.287,91", change: 0.15, trending: "up" },
@@ -15,7 +22,7 @@ export const marketNews = [
     title: "Bolsa atinge nova máxima histórica em semana de otimismo",
     summary: "Ibovespa fecha em alta de 1,5% e renova recorde com fluxo estrangeiro positivo e perspectivas favoráveis para o mercado brasileiro.",
     category: "AÇÕES",
-    image: "/src/assets/market-news-acoes.jpg",
+    image: marketNewsAcoes,
     source: "Valor Econômico",
     timestamp: "Há 2 horas",
     url: "https://valor.globo.com/financas/"
@@ -25,7 +32,7 @@ export const marketNews = [
     title: "Bitcoin supera US$ 65 mil com expectativa de aprovação de novos ETFs",
     summary: "Criptomoeda registra alta de 8% na semana, impulsionada por expectativas regulatórias positivas nos Estados Unidos.",
     category: "CRIPTO",
-    image: "/src/assets/market-news-cripto.jpg",
+    image: marketNewsCripto,
     source: "CoinDesk",
     timestamp: "Há 4 horas",
     url: "https://www.coindesk.com/markets/"
@@ -35,7 +42,7 @@ export const marketNews = [
     title: "Petrobras anuncia dividendos extraordinários de R$ 2 bilhões",
     summary: "Empresa estatal divulga proventos acima do esperado, beneficiando acionistas e elevando yield da companhia.",
     category: "DIVIDENDOS",
-    image: "/src/assets/market-news-dividendos.jpg",
+    image: marketNewsDividendos,
     source: "InfoMoney",
     timestamp: "Há 6 horas",
     url: "https://www.infomoney.com.br/mercados/"
@@ -97,7 +104,7 @@ export const featuredArticles = [
     id: 1,
     title: "Como diversificar sua carteira de investimentos em 2025",
     summary: "Estratégias comprovadas para distribuir seus ativos e reduzir riscos no mercado brasileiro.",
-    image: "/src/assets/article-diversificacao.jpg",
+    image: articleDiversificacao,
     category: "Educação Financeira",
     url: "https://www.infomoney.com.br/guias/diversificacao/"
   },
@@ -105,7 +112,7 @@ export const featuredArticles = [
     id: 2,
     title: "Análise completa: As melhores ações para dividendos",
     summary: "Conheça os ativos que têm distribuído os maiores proventos nos últimos 12 meses.",
-    image: "/src/assets/article-analise.jpg",
+    image: articleAnalise,
     category: "Análise",
     url: "https://www.infomoney.com.br/guias/dividendos/"
   },
@@ -113,7 +120,7 @@ export const featuredArticles = [
     id: 3,
     title: "Tutorial: Como usar o Índice Stoots para escolher ações",
     summary: "Aprenda a utilizar nossa metodologia exclusiva para avaliar empresas e tomar decisões informadas.",
-    image: "/src/assets/article-tutorial.jpg",
+    image: articleTutorial,
     category: "Tutorial",
     url: "https://exame.com/invest/guia/acoes/"
   }
