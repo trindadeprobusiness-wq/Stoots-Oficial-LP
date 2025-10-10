@@ -9,6 +9,7 @@ import { StootsIndex } from "@/components/StootsIndex";
 import { MarketAgenda } from "@/components/MarketAgenda";
 import { ValueProposition } from "@/components/ValueProposition";
 import { Features } from "@/components/Features";
+import { MobileApp } from "@/components/MobileApp";
 import { FutureFeatures } from "@/components/FutureFeatures";
 import { Pricing } from "@/components/Pricing";
 import { Testimonials } from "@/components/Testimonials";
@@ -30,6 +31,7 @@ const Index = () => {
       <MarketAgenda />
       <ValueProposition />
       <Features />
+      <MobileApp />
       <FutureFeatures />
       <Pricing />
       <Testimonials />
