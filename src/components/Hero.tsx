@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import platformVideo from "@/assets/platform-demo.mp4";
 import heroDashboard from "@/assets/hero-dashboard.jpg";
 
 export const Hero = () => {
@@ -48,12 +49,18 @@ export const Hero = () => {
           </div>
           
           <div className="flex-1 w-full max-w-2xl">
-            <img 
-              src={heroDashboard} 
-              alt="Dashboard STOOTS" 
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              poster={heroDashboard}
               className="w-full h-auto rounded-2xl shadow-premium transition-smooth animate-float"
               style={{ animationDuration: "4s" }}
-            />
+            >
+              <source src={platformVideo} type="video/mp4" />
+              Seu navegador não suporta a reprodução de vídeos.
+            </video>
           </div>
         </div>
       </div>
