@@ -37,15 +37,15 @@ export const Navbar = () => {
               Planos
             </button>
             <Button 
-              variant="ghost" 
+              variant="btgOutline" 
               size="sm"
-              className="text-primary-foreground hover:bg-primary-foreground/10"
+              className="text-primary-foreground border-btg-gold/50 hover:bg-btg-gold/10"
             >
               Login
             </Button>
             <Button 
+              variant="btg"
               size="sm"
-              className="bg-accent-cyan hover:bg-accent-cyan/90 text-white shadow-neon transition-smooth"
               onClick={() => scrollToSection("pricing")}
             >
               Criar conta
@@ -78,15 +78,15 @@ export const Navbar = () => {
                 Planos
               </button>
               <Button 
-                variant="ghost" 
+                variant="btgOutline" 
                 size="sm"
-                className="text-primary-foreground hover:bg-primary-foreground/10 justify-start"
+                className="text-primary-foreground border-btg-gold/50 hover:bg-btg-gold/10 justify-start"
               >
                 Login
               </Button>
               <Button 
+                variant="btg"
                 size="sm"
-                className="bg-accent-cyan hover:bg-accent-cyan/90 text-white shadow-neon transition-smooth"
                 onClick={() => scrollToSection("pricing")}
               >
                 Criar conta

@@ -50,10 +50,10 @@ export const Pricing = () => {
 
             <Button 
               size="lg" 
-              variant="outline"
+              variant="btgOutline"
               className="w-full text-lg py-6"
             >
-              Começar Gratuitamente
+              Comece a otimizar seus investimentos
             </Button>
           </div>
 
@@ -106,9 +106,10 @@ export const Pricing = () => {
 
             <Button 
               size="lg" 
-              className="w-full text-lg py-6 bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow transition-smooth"
+              variant="btg"
+              className="w-full text-lg py-6"
             >
-              Assine Agora
+              Comece a otimizar seus investimentos
             </Button>
           </div>
         </div>

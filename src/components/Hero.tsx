@@ -24,8 +24,8 @@ export const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
           <div className="flex-1 text-center lg:text-left max-w-2xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-primary-foreground mb-6 leading-tight">
-              Controle total dos seus<br />
-              <span className="font-semibold">investimentos em um só lugar.</span>
+              Decisões de investimento mais inteligentes,<br />
+              <span className="font-semibold">com clareza e personalização total.</span>
             </h1>
             
             <p className="text-lg md:text-xl text-primary-foreground/90 mb-10 leading-relaxed">
@@ -40,10 +40,11 @@ export const Hero = () => {
               />
               <Button 
                 size="lg" 
-                className="h-14 px-8 bg-accent-cyan hover:bg-accent-cyan/90 text-white shadow-neon transition-smooth whitespace-nowrap"
+                variant="btg"
+                className="h-14 px-8 whitespace-nowrap"
                 onClick={() => scrollToSection("pricing")}
               >
-                Crie sua conta gratuita
+                Comece a otimizar seus investimentos
               </Button>
             </div>
           </div>

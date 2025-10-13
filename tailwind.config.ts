@@ -41,6 +41,17 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          cyan: "hsl(var(--accent-cyan))",
+          purple: "hsl(var(--accent-purple))",
+        },
+        btg: {
+          navy: "hsl(var(--btg-navy))",
+          blue: "hsl(var(--btg-blue))",
+          lightBlue: "hsl(var(--btg-light-blue))",
+          gold: "hsl(var(--btg-gold))",
+          darkGray: "hsl(var(--btg-dark-gray))",
+          mediumGray: "hsl(var(--btg-medium-gray))",
+          lightGray: "hsl(var(--btg-light-gray))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
