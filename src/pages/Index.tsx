@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { ResourceCards } from "@/components/ResourceCards";
+import { ComparisonSection } from "@/components/ComparisonSection";
 import { ValueProposition } from "@/components/ValueProposition";
 import { Features } from "@/components/Features";
 import { MobileApp } from "@/components/MobileApp";
@@ -10,6 +11,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { FeaturedArticles } from "@/components/FeaturedArticles";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
+import { StickyCTA } from "@/components/StickyCTA";
 
 const Index = () => {
   return (
@@ -17,6 +19,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <ResourceCards />
+      <ComparisonSection />
       <ValueProposition />
       <Features />
       <MobileApp />
@@ -26,6 +29,7 @@ const Index = () => {
       <FeaturedArticles />
       <FAQ />
       <Footer />
+      <StickyCTA />
     </div>
   );
 };
