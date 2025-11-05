@@ -2,14 +2,13 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 import qrCode from "@/assets/qr-code-stoots.png";
 import { Facebook, Instagram, Linkedin, Twitter, Apple, Smartphone } from "lucide-react";
-
 export const Footer = () => {
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth"
+    });
   };
-
-  return (
-    <footer className="bg-primary-dark text-primary-foreground py-16">
+  return <footer className="bg-primary-dark text-primary-foreground py-16">
       <div className="container px-6 mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Column 1: Site Map */}
@@ -17,58 +16,40 @@ export const Footer = () => {
             <h3 className="font-semibold text-lg mb-4">Mapa do Site</h3>
             <ul className="space-y-3">
               <li>
-                <button 
-                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                  className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm"
-                >
+                <button onClick={() => window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+              })} className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm">
                   Home
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("market-news")}
-                  className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm"
-                >
+                <button onClick={() => scrollToSection("market-news")} className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm">
                   Agenda
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("daily-quotes")}
-                  className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm"
-                >
+                <button onClick={() => scrollToSection("daily-quotes")} className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm">
                   Ativos
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("features")}
-                  className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm"
-                >
+                <button onClick={() => scrollToSection("features")} className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm">
                   Carteiras Recomendadas
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("stoots-index")}
-                  className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm"
-                >
+                <button onClick={() => scrollToSection("stoots-index")} className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm">
                   Índice Stoots
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("market-news")}
-                  className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm"
-                >
+                <button onClick={() => scrollToSection("market-news")} className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm">
                   Notícias
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("pricing")}
-                  className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm"
-                >
+                <button onClick={() => scrollToSection("pricing")} className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm">
                   Planos
                 </button>
               </li>
@@ -80,10 +61,7 @@ export const Footer = () => {
             <h3 className="font-semibold text-lg mb-4">Conteúdo</h3>
             <ul className="space-y-3">
               <li>
-                <button 
-                  onClick={() => scrollToSection("articles")}
-                  className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm"
-                >
+                <button onClick={() => scrollToSection("articles")} className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm">
                   Artigos
                 </button>
               </li>
@@ -93,26 +71,17 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("faq")}
-                  className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm"
-                >
+                <button onClick={() => scrollToSection("faq")} className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm">
                   FAQ
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("resource-cards")}
-                  className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm"
-                >
+                <button onClick={() => scrollToSection("resource-cards")} className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm">
                   Simulador
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("resource-cards")}
-                  className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm"
-                >
+                <button onClick={() => scrollToSection("resource-cards")} className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm">
                   Comparador
                 </button>
               </li>
@@ -124,10 +93,7 @@ export const Footer = () => {
             <h3 className="font-semibold text-lg mb-4">Suporte</h3>
             <ul className="space-y-3">
               <li>
-                <a 
-                  href="mailto:contato@stoots.com.br"
-                  className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm"
-                >
+                <a href="mailto:contato@stoots.com.br" className="text-primary-foreground/70 hover:text-accent-cyan transition-smooth text-sm">
                   Suporte
                 </a>
               </li>
@@ -150,29 +116,19 @@ export const Footer = () => {
             <div className="flex flex-col items-start gap-4">
               {/* QR Code */}
               <div className="bg-white p-4 rounded-2xl shadow-lg">
-                <img 
-                  src={qrCode} 
-                  alt="QR Code para baixar o app Stoots" 
-                  className="w-28 h-28 rounded-lg"
-                />
+                <img src={qrCode} alt="QR Code para baixar o app Stoots" className="w-28 h-29 rounded-lg" />
               </div>
               
               {/* App Store Badges */}
               <div className="flex flex-col gap-3 w-full">
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-start gap-3 bg-white/5 border-white/20 hover:bg-white/10 text-white h-12"
-                >
+                <Button variant="outline" className="w-full justify-start gap-3 bg-white/5 border-white/20 hover:bg-white/10 text-white h-12">
                   <Apple className="w-6 h-6" />
                   <div className="flex flex-col items-start text-left">
                     <span className="text-[10px] leading-none">Baixar na</span>
                     <span className="text-sm font-semibold leading-none mt-0.5">App Store</span>
                   </div>
                 </Button>
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-start gap-3 bg-white/5 border-white/20 hover:bg-white/10 text-white h-12"
-                >
+                <Button variant="outline" className="w-full justify-start gap-3 bg-white/5 border-white/20 hover:bg-white/10 text-white h-12">
                   <Smartphone className="w-6 h-6" />
                   <div className="flex flex-col items-start text-left">
                     <span className="text-[10px] leading-none">Disponível no</span>
@@ -188,11 +144,7 @@ export const Footer = () => {
         <div className="pt-8 border-t border-primary-foreground/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
             <div className="flex items-center gap-4">
-              <img 
-                src={logo} 
-                alt="STOOTS" 
-                className="h-10 w-auto"
-              />
+              <img src={logo} alt="STOOTS" className="h-10 w-auto" />
               <p className="text-primary-foreground/70 text-sm">
                 Acompanhando seus investimentos com inteligência e personalização
               </p>
@@ -224,6 +176,5 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
