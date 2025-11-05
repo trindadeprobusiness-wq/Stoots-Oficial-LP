@@ -32,6 +32,9 @@ export default {
       minWidth: {
         'touch': '44px',
       },
+      maxWidth: {
+        'container': '1280px',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -159,6 +162,14 @@ export default {
             opacity: "1",
           },
         },
+        marquee: {
+          from: { 
+            transform: "translateX(0)" 
+          },
+          to: { 
+            transform: "translateX(calc(-100% - var(--gap)))" 
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -168,6 +179,7 @@ export default {
         "slide-in-bottom": "slide-in-bottom 0.3s ease-out",
         ticker: "ticker 30s linear infinite",
         float: "float 3s ease-in-out infinite",
+        marquee: "marquee var(--duration) linear infinite",
       },
     },
   },

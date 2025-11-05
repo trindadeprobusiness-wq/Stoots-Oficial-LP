@@ -1,36 +1,82 @@
-import { Star } from "lucide-react";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { TestimonialsMarquee } from "@/components/TestimonialsMarquee";
 
 export const Testimonials = () => {
   const titleReveal = useScrollReveal({ threshold: 0.2 });
-  const cardsReveal = useScrollReveal({ threshold: 0.1 });
   const statsReveal = useScrollReveal({ threshold: 0.1 });
+  
   const testimonials = [
     {
-      name: "Ricardo Almeida",
-      role: "Analista de Investimentos",
-      content: "Finalmente encontrei uma plataforma que me dá o controle que eu sempre quis. A personalização do Diagrama do Cerrado é revolucionária.",
-      rating: 5
+      author: {
+        name: "Ricardo Almeida",
+        handle: "Analista de Investimentos",
+        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Finalmente encontrei uma plataforma que me dá o controle que eu sempre quis. A personalização é revolucionária."
     },
     {
-      name: "Marina Santos",
-      role: "Empreendedora",
-      content: "A clareza que o STOOTS trouxe para minha carteira foi transformadora. Agora tomo decisões com confiança e dados reais.",
-      rating: 5
+      author: {
+        name: "Marina Santos",
+        handle: "Empreendedora",
+        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "A clareza que o STOOTS trouxe para minha carteira foi transformadora. Agora tomo decisões com confiança e dados reais."
     },
     {
-      name: "Felipe Mendes",
-      role: "Investidor Iniciante",
-      content: "Mesmo sendo novo no mundo dos investimentos, consegui organizar e entender meu portfólio em poucos dias. Interface intuitiva e poderosa.",
-      rating: 5
+      author: {
+        name: "Felipe Mendes",
+        handle: "Investidor Iniciante",
+        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Mesmo sendo novo no mundo dos investimentos, consegui organizar e entender meu portfólio em poucos dias. Interface intuitiva e poderosa."
+    },
+    {
+      author: {
+        name: "Ana Costa",
+        handle: "Gestora de Patrimônio",
+        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "A plataforma simplificou a gestão dos meus clientes. Relatórios claros e visualizações que fazem toda a diferença nas apresentações."
+    },
+    {
+      author: {
+        name: "Carlos Ribeiro",
+        handle: "Trader Autônomo",
+        avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "A velocidade de análise e a precisão dos dados me deram vantagem competitiva. Essencial para quem opera no mercado."
+    },
+    {
+      author: {
+        name: "Juliana Lima",
+        handle: "Investidora de Longo Prazo",
+        avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Acompanhar a evolução do meu patrimônio nunca foi tão fácil. A interface é linda e os insights são valiosos."
+    },
+    {
+      author: {
+        name: "Pedro Oliveira",
+        handle: "Consultor Financeiro",
+        avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Recomendo para todos os meus clientes. A transparência e o controle que o STOOTS oferece são incomparáveis."
+    },
+    {
+      author: {
+        name: "Beatriz Souza",
+        handle: "Investidora em FIIs",
+        avatar: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Consigo visualizar todos os meus fundos imobiliários em um só lugar com clareza total. Transformou minha forma de investir."
     }
   ];
 
   return (
-    <section className="py-24 bg-secondary/30">
-      <div className="container px-6 mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+    <section className="py-16 md:py-24 bg-secondary/30">
+      <div className="container px-4 sm:px-6 mx-auto">
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             <TextAnimate animation="slideUp" by="word">
               Investidores Que Conquistaram o Controle
@@ -46,38 +92,7 @@ export const Testimonials = () => {
           </p>
         </div>
 
-        <div 
-          ref={cardsReveal.ref}
-          className={`grid md:grid-cols-3 gap-8 max-w-6xl mx-auto transition-all duration-700 delay-200 ${
-            cardsReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          {testimonials.map((testimonial, index) => (
-            <div 
-              key={index}
-              className="p-8 rounded-2xl bg-card border border-border hover:shadow-elegant transition-smooth"
-            >
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-accent text-accent" />
-                ))}
-              </div>
-              
-              <p className="text-card-foreground/90 leading-relaxed mb-6 italic">
-                "{testimonial.content}"
-              </p>
-              
-              <div className="pt-4 border-t border-border">
-                <p className="font-semibold text-card-foreground">
-                  {testimonial.name}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {testimonial.role}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <TestimonialsMarquee testimonials={testimonials} />
 
         <div 
           ref={statsReveal.ref}
