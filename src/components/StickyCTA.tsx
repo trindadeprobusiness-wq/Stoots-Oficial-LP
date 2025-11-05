@@ -33,6 +33,7 @@ export const StickyCTA = () => {
       <Button 
         variant="btg" 
         size="lg"
+        neon={true}
         className="w-full text-lg font-bold"
         onClick={scrollToPricing}
       >

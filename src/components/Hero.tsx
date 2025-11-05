@@ -41,6 +41,7 @@ export const Hero = () => {
               <Button 
                 size="lg" 
                 variant="btg"
+                neon={true}
                 className="h-14 px-8 text-base font-semibold"
                 onClick={() => scrollToSection("pricing")}
               >

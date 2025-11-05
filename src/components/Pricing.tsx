@@ -129,6 +129,7 @@ export const Pricing = () => {
             <Button 
               size="lg" 
               variant="btg"
+              neon={true}
               className="w-full text-lg py-6 font-bold"
             >
               Assinar Agora - 30 DIAS GRÁTIS
