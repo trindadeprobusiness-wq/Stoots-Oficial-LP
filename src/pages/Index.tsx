@@ -8,7 +8,7 @@ import { Features } from "@/components/Features";
 import { ForecastFeatureMacbook } from "@/components/ForecastFeatureMacbook";
 import { MobileApp } from "@/components/MobileApp";
 import { FutureFeatures } from "@/components/FutureFeatures";
-import { Pricing } from "@/components/Pricing";
+import PricingPremium from "@/components/PricingPremium";
 import { Testimonials } from "@/components/Testimonials";
 import { FeaturedArticles } from "@/components/FeaturedArticles";
 import { FAQ } from "@/components/FAQ";
@@ -28,7 +28,7 @@ const Index = () => {
       <ForecastFeatureMacbook />
       <MobileApp />
       <FutureFeatures />
-      <Pricing />
+      <PricingPremium />
       <Testimonials />
       <FeaturedArticles />
       <FAQ />
