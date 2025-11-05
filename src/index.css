@@ -235,4 +235,65 @@ All colors MUST be HSL.
   .transition-bounce {
     transition: var(--transition-bounce);
   }
+  
+  /* 3D Perspective Container for Comparison Table */
+  .perspective-container {
+    perspective: 2000px;
+    perspective-origin: center;
+  }
+  
+  .comparison-card-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .comparison-card-3d.revealed {
+    animation: reveal-3d 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  @keyframes reveal-3d {
+    0% {
+      opacity: 0;
+      transform: rotateX(15deg) translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateX(0deg) translateY(0px);
+    }
+  }
+  
+  /* Checkmark Bounce Animation */
+  @keyframes check-bounce {
+    0% { 
+      transform: scale(0); 
+      opacity: 0;
+    }
+    50% { 
+      transform: scale(1.2); 
+    }
+    100% { 
+      transform: scale(1); 
+      opacity: 1;
+    }
+  }
+  
+  .animated-check {
+    animation: check-bounce 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Row Stagger Animation */
+  @keyframes row-reveal {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .row-stagger {
+    animation: row-reveal 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
 }
