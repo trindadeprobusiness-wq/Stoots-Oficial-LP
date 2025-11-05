@@ -1,5 +1,6 @@
 import { Calculator, GitCompare, Briefcase, FileText } from "lucide-react";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const resources = [
   {
@@ -29,14 +30,25 @@ const resources = [
 ];
 
 export const ResourceCards = () => {
+  const { ref, isVisible } = useScrollReveal({
+    threshold: 0.15,
+    rootMargin: "-50px",
+    triggerOnce: true,
+  });
+
   return (
-    <section className="py-16 md:py-20 bg-background">
+    <section ref={ref} className="py-16 md:py-20 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {resources.map((resource, index) => {
             const Icon = resource.icon;
             return (
-              <CardContainer key={index} className="h-full">
+              <CardContainer 
+                key={index} 
+                className="h-full"
+                isVisible={isVisible}
+                animationDelay={index * 100}
+              >
                 <CardBody
                   className={`${resource.gradient} p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-premium cursor-pointer group touch-active w-full h-full flex flex-col`}
                 >

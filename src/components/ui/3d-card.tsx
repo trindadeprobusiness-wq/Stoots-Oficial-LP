@@ -15,17 +15,34 @@ export const CardContainer = ({
   children,
   className,
   containerClassName,
+  animationDelay = 0,
+  isVisible = true,
 }: {
   children?: React.ReactNode;
   className?: string;
   containerClassName?: string;
+  animationDelay?: number;
+  isVisible?: boolean;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMouseEntered, setIsMouseEntered] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   const isTouchDevice = () => {
     return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
   };
+
+  useEffect(() => {
+    if (isVisible && !hasAnimated) {
+      setHasAnimated(true);
+      const timeout = setTimeout(() => {
+        if (containerRef.current) {
+          containerRef.current.style.willChange = "auto";
+        }
+      }, 700 + animationDelay);
+      return () => clearTimeout(timeout);
+    }
+  }, [isVisible, hasAnimated, animationDelay]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (isTouchDevice()) return;
@@ -59,10 +76,16 @@ export const CardContainer = ({
       <div
         className={cn(
           "flex items-center justify-center h-full",
+          "transition-all duration-700 ease-out",
+          hasAnimated 
+            ? "opacity-100 translate-y-0 scale-100" 
+            : "opacity-0 translate-y-8 scale-95",
           containerClassName
         )}
         style={{
           perspective: "1000px",
+          transitionDelay: `${animationDelay}ms`,
+          willChange: hasAnimated ? "auto" : "transform, opacity",
         }}
       >
         <div
