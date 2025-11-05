@@ -1,4 +1,5 @@
 import { Calculator, GitCompare, Briefcase, FileText } from "lucide-react";
+import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 
 const resources = [
   {
@@ -35,18 +36,25 @@ export const ResourceCards = () => {
           {resources.map((resource, index) => {
             const Icon = resource.icon;
             return (
-              <div
-                key={index}
-                className={`${resource.gradient} p-6 sm:p-8 rounded-xl sm:rounded-2xl transition-smooth hover:scale-105 hover:shadow-premium cursor-pointer group touch-active`}
-              >
-                <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-white mb-3 sm:mb-4 group-hover:scale-110 transition-smooth" />
-                <h3 className="text-white font-semibold text-base sm:text-lg mb-2 leading-tight">
-                  {resource.title}
-                </h3>
-                <p className="text-white/80 text-sm leading-relaxed">
-                  {resource.description}
-                </p>
-              </div>
+              <CardContainer key={index} className="h-full">
+                <CardBody
+                  className={`${resource.gradient} p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-premium cursor-pointer group touch-active w-full h-full flex flex-col`}
+                >
+                  <CardItem translateZ="60" className="mb-3 sm:mb-4">
+                    <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-white group-hover:scale-110 transition-smooth" />
+                  </CardItem>
+                  <CardItem translateZ="50" className="mb-2">
+                    <h3 className="text-white font-semibold text-base sm:text-lg leading-tight">
+                      {resource.title}
+                    </h3>
+                  </CardItem>
+                  <CardItem translateZ="30">
+                    <p className="text-white/80 text-sm leading-relaxed">
+                      {resource.description}
+                    </p>
+                  </CardItem>
+                </CardBody>
+              </CardContainer>
             );
           })}
         </div>
