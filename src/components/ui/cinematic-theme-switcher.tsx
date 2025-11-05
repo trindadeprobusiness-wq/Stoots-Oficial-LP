@@ -61,7 +61,7 @@ export default function CinematicThemeSwitcher() {
   if (!mounted) {
     return (
       <div className="relative inline-block">
-        <div className="relative flex h-[64px] w-[104px] items-center rounded-full bg-gray-200 p-1" />
+        <div className="relative flex h-[48px] w-[80px] items-center rounded-full bg-gray-200 p-1" />
       </div>
     );
   }
@@ -117,7 +117,7 @@ export default function CinematicThemeSwitcher() {
       <motion.button
         ref={toggleRef}
         onClick={handleToggle}
-        className="relative flex h-[64px] w-[104px] items-center rounded-full p-[6px] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-btg-gold/50"
+        className="relative flex h-[48px] w-[80px] items-center rounded-full p-[4px] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-btg-gold/50"
         style={{
           background: isDark
             ? 'radial-gradient(ellipse at top left, hsl(207 90% 12%) 0%, hsl(207 100% 10%) 40%, hsl(207 100% 5%) 100%)'
@@ -199,14 +199,14 @@ export default function CinematicThemeSwitcher() {
         />
 
         {/* Background Icons */}
-        <div className="absolute inset-0 flex items-center justify-between px-4">
-          <Sun size={20} className={isDark ? 'text-btg-gold/60' : 'text-btg-gold'} />
-          <Moon size={20} className={isDark ? 'text-btg-light-blue' : 'text-btg-navy/70'} />
+        <div className="absolute inset-0 flex items-center justify-between px-3">
+          <Sun size={16} className={isDark ? 'text-btg-gold/60' : 'text-btg-gold'} />
+          <Moon size={16} className={isDark ? 'text-btg-light-blue' : 'text-btg-navy/70'} />
         </div>
 
         {/* Circular Thumb with Bouncy Spring Physics */}
         <motion.div
-          className="relative z-10 flex h-[44px] w-[44px] items-center justify-center rounded-full overflow-hidden"
+          className="relative z-10 flex h-[36px] w-[36px] items-center justify-center rounded-full overflow-hidden"
           style={{
             background: isDark
               ? 'linear-gradient(145deg, hsl(207 20% 40%) 0%, hsl(207 30% 30%) 50%, hsl(207 40% 25%) 100%)'
@@ -235,7 +235,7 @@ export default function CinematicThemeSwitcher() {
               : '2px solid rgba(255, 255, 255, 0.9)',
           }}
           animate={{
-            x: isDark ? 46 : 0,
+            x: isDark ? 36 : 0,
           }}
           transition={{
             type: 'spring',
@@ -291,9 +291,9 @@ export default function CinematicThemeSwitcher() {
           {/* Icon */}
           <div className="relative z-10">
             {isDark ? (
-              <Moon size={20} className="text-btg-light-blue" />
+              <Moon size={16} className="text-btg-light-blue" />
             ) : (
-              <Sun size={20} className="text-btg-gold" />
+              <Sun size={16} className="text-btg-gold" />
             )}
           </div>
         </motion.div>
