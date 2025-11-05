@@ -188,7 +188,7 @@ export default function PricingPremium() {
               delay: 0,
             }}
           >
-            Planos que se Adaptam aos Seus Objetivos
+            Preço de Lançamento MVP: Mais da Metade do Preço dos Concorrentes
           </VerticalCutReveal>
         </h2>
 
@@ -199,8 +199,7 @@ export default function PricingPremium() {
           customVariants={revealVariants}
           className="text-lg text-muted-foreground max-w-2xl mx-auto"
         >
-          Escolha o plano ideal para conquistar o controle total dos seus investimentos. 
-          Cancele quando quiser, sem compromisso.
+          Os consolidadores tradicionais cobram R$ 240/ano (R$ 19,90/mês) por funcionalidades básicas.
         </TimelineContent>
 
         <TimelineContent
@@ -334,13 +333,28 @@ export default function PricingPremium() {
           customVariants={revealVariants}
           className="mt-12 max-w-3xl mx-auto relative z-10"
         >
-          <div className="bg-gradient-to-r from-btg-gold/5 via-blue-500/5 to-btg-gold/5 border border-btg-gold/20 rounded-2xl p-6 md:p-8">
+          <div className="bg-gradient-to-r from-btg-gold/5 via-blue-500/5 to-btg-gold/5 border border-btg-gold/20 rounded-2xl p-6 md:p-8 space-y-6">
             <p className="text-center text-foreground text-lg leading-relaxed">
-              <span className="font-bold text-btg-gold">Premium anual por R$ 99,90/ano</span> vs 
-              concorrentes que cobram <span className="line-through text-muted-foreground">R$ 29,90/mês</span> 
-              {" "}(R$ 358,80/ano). Economize <span className="font-bold text-green-500">72%</span> e tenha 
-              acesso a recursos que outros cobram extra.
+              <span className="font-bold text-btg-gold">Concorrentes: R$ 240/ano</span> (12x R$ 19,90) <br />
+              <span className="font-bold text-btg-gold">STOOTS (MVP): R$ 99,90/ano</span> (Economia de 58%)
             </p>
+            <p className="text-center text-muted-foreground text-base">
+              Menos de R$ 8,50/mês para ter controle total dos seus investimentos.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6 mt-6">
+              <div className="space-y-2">
+                <h4 className="font-bold text-foreground">Por que mais barato?</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Estamos na fase MVP e queremos crescer junto com você. Nosso foco é entregar valor real, não cobrar por 'nome de mercado'.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <h4 className="font-bold text-foreground">Por que plano anual?</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Investir é jogo de longo prazo. Priorizamos investidores comprometidos com sua jornada — e recompensamos com o melhor preço.
+                </p>
+              </div>
+            </div>
           </div>
         </TimelineContent>
       </div>

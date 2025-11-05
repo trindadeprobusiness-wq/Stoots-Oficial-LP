@@ -22,19 +22,22 @@ export const Hero = () => {
       <div className="container relative z-10 px-6 py-20 mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
           <div className="flex-1 text-center lg:text-left max-w-2xl">
+            <div className="mb-4 inline-block">
+              <span className="bg-btg-gold/20 text-btg-gold border border-btg-gold/30 px-4 py-2 rounded-full text-xs md:text-sm font-semibold">
+                Oferta de Lançamento MVP - 58% OFF
+              </span>
+            </div>
+
             <h1 className="text-3xl xs:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-primary-foreground mb-6 leading-tight">
-              Controle Total de Investimentos.<br className="hidden sm:block" />
-              <span className="font-semibold">Sem Planilhas. Sem Confusão.</span>
+              <span className="font-semibold">STOOTS: O Consolidador Inteligente que Trabalha pela Sua Estratégia</span>
             </h1>
             
             <p className="text-base xs:text-lg md:text-xl text-primary-foreground/90 mb-6 leading-relaxed font-medium max-w-prose">
-              Visualize performance em segundos. Tome decisões com dados reais. Personalize cada métrica.
+              Pare de perder tempo com planilhas. Consolide, analise e otimize seus investimentos em um só lugar.
             </p>
 
             <div className="mb-8 space-y-2 text-primary-foreground/85 text-sm xs:text-base md:text-lg">
-              <p>Investidor brasileiro sério gerencia 4-6 tipos de ativos diferentes.</p>
-              <p>Mas 80% ainda usa planilhas desordenadas ou apps que não servem.</p>
-              <p className="font-semibold text-primary-foreground">STOOTS muda isso - análise profissional, interface premium, preço que cabe no bolso.</p>
+              <p>Cansei de abrir 5 abas diferentes para saber quanto tenho investido? O STOOTS acaba com esse caos. Transformamos múltiplas corretoras e carteiras em uma visão única, clara e acionável do seu patrimônio. Da consolidação automática ao planejamento de aportes, você tem tudo que precisa para investir com disciplina e estratégia — sem mensalidades abusivas.</p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:max-w-xl">
@@ -45,7 +48,7 @@ export const Hero = () => {
                 className="w-full sm:w-auto"
                 onClick={() => scrollToSection("pricing")}
               >
-                Testar 30 Dias GRÁTIS
+                ASSINAR PLANO ANUAL POR R$ 99,90
               </Button>
               <Button 
                 size="lg" 

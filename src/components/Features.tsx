@@ -10,40 +10,47 @@ export const Features = () => {
   const features = [
     {
       icon: BarChart3,
-      title: "Gerenciamento de Ativos Simplificado",
-      description: "Cadastre, edite e organize seus investimentos em poucos cliques. Visualização em tempo real com cálculo automático do valor total da carteira.",
+      title: "Consolidação Automática: Todos os Seus Ativos em Um Só Lugar",
+      subtitle: "O fim do 'em qual corretora eu comprei isso mesmo?'",
+      description: "Cadastro Rápido e Visual: Lance Ações (BR/EUA), FIIs, REITs, Criptomoedas, Renda Fixa e até Reservas de Valor (Ouro, alternativos). Dashboard Essencial: Veja instantaneamente: Patrimônio Total investido, Aporte do mês atual, Rentabilidade real (R$ e %), Distribuição por classe de ativo (gráficos de pizza + tabelas detalhadas). Preços em Tempo Real: Integração com APIs de mercado para cálculo automático do valor atualizado de cada posição.",
       details: [
-        "Interface intuitiva para CRUD completo",
-        "Atualização em tempo real",
-        "Consolidação automática de valores"
+        "Cadastro Rápido e Visual",
+        "Dashboard Essencial com métricas instantâneas",
+        "Preços em Tempo Real via API"
       ],
+      impact: "Imagine acordar e, em 10 segundos, saber exatamente como está sua carteira. Sem planilhas. Sem fórmulas quebradas.",
       image: featureDashboard
     },
     {
       icon: ClipboardCheck,
-      title: "Análise Personalizada",
-      description: "Avalie cada ativo com seu próprio método. Checklist customizável com sistema de pontuação (+1/-1) e modelo padrão pronto para uso.",
+      title: "O Diagrama do Cerrado: Avalie Ativos do Seu Jeito",
+      subtitle: "Porque cada investidor tem sua própria tese.",
+      description: "Chega de copiar análises genéricas. No STOOTS, você cria seu próprio checklist personalizado para avaliar Ações e FIIs.",
       details: [
-        "Checklists totalmente personalizáveis",
-        "Sistema de pontuação inteligente",
-        "Template profissional incluído"
+        "Perguntas Personalizadas: Defina seus critérios (fundamentos, dividendos, gestão, etc.)",
+        "Nota Automática: Cada 'Sim' vale +1, cada 'Não' vale -1. Você vê rapidamente quais ativos estão alinhados à sua estratégia.",
+        "Modelo Pronto Incluso: Comece com nosso template e ajuste conforme sua evolução como investidor."
       ],
+      impact: "Pare de investir no escuro. Invista com base na SUA análise.",
       image: featureAnalytics
     },
     {
       icon: Target,
-      title: "Planejamento e Simulação de Aportes",
+      title: "Planejamento de Aportes Inteligente",
+      subtitle: "Onde investir os próximos R$ 500? O STOOTS te mostra.",
       description: "Defina metas percentuais para cada classe de ativo. Simule aportes e receba sugestões automáticas de alocação ideal.",
       details: [
-        "Metas com validação em 100%",
-        "Simulador de aportes futuros",
-        "Recomendações inteligentes de alocação"
+        "Defina Metas de Alocação: Configure sua distribuição ideal (ex: 60% Ações, 30% FIIs, 10% Cripto).",
+        "Simulação de Aportes: Digite quanto vai investir e receba sugestões automáticas para rebalancear sua carteira.",
+        "Atualização Instantânea: Confirme o aporte e veja sua carteira atualizada em tempo real."
       ],
+      impact: "Disciplina não é sorte. É ter um sistema que te guia no caminho certo.",
       image: featurePlanning
     },
     {
       icon: PieChart,
       title: "Dashboard e Visualização Premium",
+      subtitle: "Tudo que importa, em um só lugar",
       description: "Cards elegantes exibindo investimento total, aportes mensais e rentabilidade. Gráficos de pizza e colunas inspirados nas melhores plataformas.",
       details: [
         "Métricas em tempo real",
@@ -94,11 +101,17 @@ export const Features = () => {
                     {feature.title}
                   </h3>
                   
+                  {feature.subtitle && (
+                    <p className="text-lg text-btg-gold font-semibold mb-4">
+                      {feature.subtitle}
+                    </p>
+                  )}
+                  
                   <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                     {feature.description}
                   </p>
                   
-                  <ul className="space-y-3">
+                  <ul className="space-y-3 mb-6">
                     {feature.details.map((detail, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5" />
@@ -106,6 +119,12 @@ export const Features = () => {
                       </li>
                     ))}
                   </ul>
+
+                  {feature.impact && (
+                    <p className="italic text-muted-foreground border-l-4 border-btg-gold pl-4 py-2">
+                      {feature.impact}
+                    </p>
+                  )}
                 </div>
                 
                 <div className="flex-1 w-full">
