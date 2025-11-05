@@ -21,7 +21,7 @@ export const Features = () => {
     },
     {
       icon: ClipboardCheck,
-      title: "Análise Personalizada - Diagrama do Cerrado",
+      title: "Análise Personalizada",
       description: "Avalie cada ativo com seu próprio método. Checklist customizável com sistema de pontuação (+1/-1) e modelo padrão pronto para uso.",
       details: [
         "Checklists totalmente personalizáveis",
