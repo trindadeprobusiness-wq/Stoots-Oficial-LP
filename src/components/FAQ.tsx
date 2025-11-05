@@ -4,8 +4,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const FAQ = () => {
+  const titleReveal = useScrollReveal({ threshold: 0.2 });
+  const accordionReveal = useScrollReveal({ threshold: 0.1 });
+  const contactReveal = useScrollReveal({ threshold: 0.1 });
   const faqs = [
     {
       question: "Meus dados estão seguros no STOOTS?",
@@ -33,7 +37,12 @@ export const FAQ = () => {
     <section className="py-24 bg-background">
       <div className="container px-6 mx-auto">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-16">
+          <div 
+            ref={titleReveal.ref}
+            className={`text-center mb-16 transition-all duration-700 ${
+              titleReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Dúvidas Frequentes
             </h2>
@@ -42,7 +51,14 @@ export const FAQ = () => {
             </p>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion 
+            ref={accordionReveal.ref}
+            type="single" 
+            collapsible 
+            className={`space-y-4 transition-all duration-700 delay-200 ${
+              accordionReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
@@ -59,7 +75,12 @@ export const FAQ = () => {
             ))}
           </Accordion>
 
-          <div className="mt-12 text-center p-8 rounded-2xl bg-gradient-to-r from-primary/5 to-accent/5 border border-primary/10">
+          <div 
+            ref={contactReveal.ref}
+            className={`mt-12 text-center p-8 rounded-2xl bg-gradient-to-r from-primary/5 to-accent/5 border border-primary/10 transition-all duration-700 delay-300 ${
+              contactReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <p className="text-lg text-foreground/90">
               Ainda tem dúvidas? Entre em contato com nosso suporte em{" "}
               <a href="mailto:contato@stoots.com.br" className="text-primary font-semibold hover:underline">

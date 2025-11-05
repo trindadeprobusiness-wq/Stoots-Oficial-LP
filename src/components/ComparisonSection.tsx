@@ -1,7 +1,11 @@
 import { Check, X, FileSpreadsheet, Lock, Wallet } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const ComparisonSection = () => {
+  const titleReveal = useScrollReveal({ threshold: 0.2 });
+  const tableReveal = useScrollReveal({ threshold: 0.1 });
+  const cardsReveal = useScrollReveal({ threshold: 0.1 });
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -9,7 +13,12 @@ export const ComparisonSection = () => {
   return (
     <section className="py-24 bg-gradient-to-b from-background to-secondary/20">
       <div className="container px-6 mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div 
+          ref={titleReveal.ref}
+          className={`max-w-3xl mx-auto text-center mb-16 transition-all duration-700 ${
+            titleReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="inline-block bg-btg-gold/10 text-btg-gold px-4 py-2 rounded-full text-sm font-semibold mb-6">
             POR QUE ESCOLHER STOOTS?
           </div>
@@ -22,7 +31,12 @@ export const ComparisonSection = () => {
         </div>
 
         {/* Comparison Table */}
-        <div className="max-w-6xl mx-auto mb-16 overflow-x-auto">
+        <div 
+          ref={tableReveal.ref}
+          className={`max-w-6xl mx-auto mb-16 overflow-x-auto transition-all duration-700 delay-200 ${
+            tableReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="min-w-[800px] bg-card rounded-2xl border-2 border-border shadow-elegant">
             <div className="grid grid-cols-5 gap-4 p-6 bg-secondary/30 rounded-t-2xl border-b-2 border-border">
               <div className="font-bold text-foreground">Aspecto</div>
@@ -93,7 +107,12 @@ export const ComparisonSection = () => {
         </div>
 
         {/* Three Comparison Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+        <div 
+          ref={cardsReveal.ref}
+          className={`grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12 transition-all duration-700 delay-300 ${
+            cardsReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           {/* Card 1: Saia das Planilhas */}
           <div className="p-8 rounded-2xl bg-card border-2 border-border hover:border-btg-gold/50 hover:shadow-elegant transition-all group">
             <div className="w-16 h-16 bg-destructive/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">

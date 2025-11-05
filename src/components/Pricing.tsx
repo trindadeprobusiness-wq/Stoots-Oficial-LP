@@ -1,11 +1,21 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const Pricing = () => {
+  const titleReveal = useScrollReveal({ threshold: 0.2 });
+  const cardsReveal = useScrollReveal({ threshold: 0.1 });
+  const badgesReveal = useScrollReveal({ threshold: 0.1 });
+  const calloutReveal = useScrollReveal({ threshold: 0.1 });
   return (
     <section id="pricing" className="py-24 bg-background">
       <div className="container px-6 mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div 
+          ref={titleReveal.ref}
+          className={`max-w-3xl mx-auto text-center mb-16 transition-all duration-700 ${
+            titleReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Investimento Acessível, Retorno Extraordinário
           </h2>
@@ -14,7 +24,12 @@ export const Pricing = () => {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 mb-12">
+        <div 
+          ref={cardsReveal.ref}
+          className={`max-w-5xl mx-auto grid md:grid-cols-2 gap-8 mb-12 transition-all duration-700 delay-200 ${
+            cardsReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="p-8 rounded-2xl bg-card border-2 border-border hover:shadow-elegant transition-smooth">
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-card-foreground mb-2">
@@ -138,7 +153,12 @@ export const Pricing = () => {
         </div>
 
         {/* Trust Badges */}
-        <div className="max-w-3xl mx-auto mb-10">
+        <div 
+          ref={badgesReveal.ref}
+          className={`max-w-3xl mx-auto mb-10 transition-all duration-700 delay-300 ${
+            badgesReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
@@ -167,7 +187,12 @@ export const Pricing = () => {
           </div>
         </div>
 
-        <div className="max-w-3xl mx-auto p-8 rounded-2xl bg-gradient-to-r from-btg-gold/10 to-accent/10 border-2 border-btg-gold/30">
+        <div 
+          ref={calloutReveal.ref}
+          className={`max-w-3xl mx-auto p-8 rounded-2xl bg-gradient-to-r from-btg-gold/10 to-accent/10 border-2 border-btg-gold/30 transition-all duration-700 delay-400 ${
+            calloutReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <p className="text-center text-lg text-foreground/90 leading-relaxed">
             <strong className="text-btg-gold">Você economiza R$ 180/ano:</strong> Kinvo e Trademap cobram R$ 180-300/ano. STOOTS oferece <strong className="text-foreground">MESMAS funcionalidades + Diagrama do Cerrado exclusivo</strong> por apenas <strong className="text-btg-gold">R$ 119,90/ano</strong>. Tecnologia premium, preço inteligente.
           </p>

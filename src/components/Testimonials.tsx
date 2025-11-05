@@ -1,6 +1,10 @@
 import { Star } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const Testimonials = () => {
+  const titleReveal = useScrollReveal({ threshold: 0.2 });
+  const cardsReveal = useScrollReveal({ threshold: 0.1 });
+  const statsReveal = useScrollReveal({ threshold: 0.1 });
   const testimonials = [
     {
       name: "Ricardo Almeida",
@@ -25,7 +29,12 @@ export const Testimonials = () => {
   return (
     <section className="py-24 bg-secondary/30">
       <div className="container px-6 mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div 
+          ref={titleReveal.ref}
+          className={`max-w-3xl mx-auto text-center mb-16 transition-all duration-700 ${
+            titleReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Investidores Que Conquistaram o Controle
           </h2>
@@ -34,7 +43,12 @@ export const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div 
+          ref={cardsReveal.ref}
+          className={`grid md:grid-cols-3 gap-8 max-w-6xl mx-auto transition-all duration-700 delay-200 ${
+            cardsReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
@@ -62,7 +76,12 @@ export const Testimonials = () => {
           ))}
         </div>
 
-        <div className="mt-12 flex justify-center gap-8 flex-wrap">
+        <div 
+          ref={statsReveal.ref}
+          className={`mt-12 flex justify-center gap-8 flex-wrap transition-all duration-700 delay-300 ${
+            statsReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="text-center">
             <div className="text-4xl font-bold text-primary mb-2">98%</div>
             <div className="text-sm text-muted-foreground">Satisfação</div>
