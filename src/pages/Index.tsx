@@ -1,9 +1,11 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { ResourceCards } from "@/components/ResourceCards";
+import { TrackEverything } from "@/components/TrackEverything";
 import { ComparisonSection } from "@/components/ComparisonSection";
 import { ValueProposition } from "@/components/ValueProposition";
 import { Features } from "@/components/Features";
+import { ForecastFeature } from "@/components/ForecastFeature";
 import { MobileApp } from "@/components/MobileApp";
 import { FutureFeatures } from "@/components/FutureFeatures";
 import { Pricing } from "@/components/Pricing";
@@ -19,9 +21,11 @@ const Index = () => {
       <Navbar />
       <Hero />
       <ResourceCards />
+      <TrackEverything />
       <ComparisonSection />
       <ValueProposition />
       <Features />
+      <ForecastFeature />
       <MobileApp />
       <FutureFeatures />
       <Pricing />
