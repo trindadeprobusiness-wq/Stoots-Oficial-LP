@@ -62,17 +62,17 @@ export const TrackEverything = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
             }`}
           >
-            <div className="relative mx-auto w-full max-w-[320px] lg:max-w-[380px]">
+            <div className="relative mx-auto w-full max-w-[280px] xs:max-w-[320px] lg:max-w-[380px]">
               {/* Glow effect behind phone */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-btg-gold/30 to-blue-500/30 blur-3xl scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-btg-gold/20 to-blue-500/20 blur-2xl md:blur-3xl scale-110" />
               
               {/* Phone frame */}
-              <div className="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-[3rem] p-3 shadow-2xl animate-float">
+              <div className="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] md:rounded-[3rem] p-2 md:p-3 shadow-2xl animate-float">
                 {/* Notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-gray-900 rounded-b-3xl z-10" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 md:w-40 h-6 md:h-7 bg-gray-900 rounded-b-3xl z-10" />
                 
                 {/* Screen */}
-                <div className="relative bg-background rounded-[2.5rem] overflow-hidden aspect-[9/19.5]">
+                <div className="relative bg-background rounded-[2rem] md:rounded-[2.5rem] overflow-hidden aspect-[9/19.5]">
                   <video
                     src={mobileAppVideo}
                     autoPlay

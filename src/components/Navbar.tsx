@@ -18,7 +18,7 @@ export const Navbar = () => {
           <img 
             src={logo} 
             alt="STOOTS" 
-            className="h-14 w-auto cursor-pointer drop-shadow-lg hover:drop-shadow-xl transition-smooth"
+            className="h-10 md:h-14 w-auto cursor-pointer drop-shadow-lg hover:drop-shadow-xl transition-smooth"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           />
 
@@ -54,8 +54,9 @@ export const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-primary-foreground"
+            className="md:hidden text-primary-foreground p-2 min-h-touch min-w-touch flex items-center justify-center touch-active no-select"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -63,7 +64,7 @@ export const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-6 border-t border-primary-foreground/10">
+          <div className="md:hidden py-6 border-t border-primary-foreground/10 animate-fade-in">
             <div className="flex flex-col gap-4">
               <button 
                 onClick={() => scrollToSection("features")}

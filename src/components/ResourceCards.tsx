@@ -29,18 +29,18 @@ const resources = [
 
 export const ResourceCards = () => {
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="py-16 md:py-20 bg-background">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {resources.map((resource, index) => {
             const Icon = resource.icon;
             return (
               <div
                 key={index}
-                className={`${resource.gradient} p-8 rounded-2xl transition-smooth hover:scale-105 hover:shadow-premium cursor-pointer group`}
+                className={`${resource.gradient} p-6 sm:p-8 rounded-xl sm:rounded-2xl transition-smooth hover:scale-105 hover:shadow-premium cursor-pointer group touch-active`}
               >
-                <Icon className="w-10 h-10 text-white mb-4 group-hover:scale-110 transition-smooth" />
-                <h3 className="text-white font-semibold text-lg mb-2 leading-tight">
+                <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-white mb-3 sm:mb-4 group-hover:scale-110 transition-smooth" />
+                <h3 className="text-white font-semibold text-base sm:text-lg mb-2 leading-tight">
                   {resource.title}
                 </h3>
                 <p className="text-white/80 text-sm leading-relaxed">

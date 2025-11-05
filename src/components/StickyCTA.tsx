@@ -29,12 +29,12 @@ export const StickyCTA = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-btg-navy/95 backdrop-blur-md border-t border-btg-gold/20 p-4 shadow-2xl md:hidden animate-slide-in-bottom">
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-btg-navy/95 backdrop-blur-md border-t border-btg-gold/20 p-4 safe-area-inset-bottom shadow-2xl md:hidden animate-slide-in-bottom">
       <Button 
         variant="btg" 
         size="lg"
         neon={true}
-        className="w-full text-lg font-bold"
+        className="w-full font-bold"
         onClick={scrollToPricing}
       >
         Testar 30 Dias GRÁTIS →

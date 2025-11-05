@@ -22,27 +22,27 @@ export const Hero = () => {
       <div className="container relative z-10 px-6 py-20 mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
           <div className="flex-1 text-center lg:text-left max-w-2xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-primary-foreground mb-6 leading-tight">
-              Controle Total de Investimentos.<br />
+            <h1 className="text-3xl xs:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-primary-foreground mb-6 leading-tight">
+              Controle Total de Investimentos.<br className="hidden sm:block" />
               <span className="font-semibold">Sem Planilhas. Sem Confusão.</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-primary-foreground/90 mb-6 leading-relaxed font-medium">
+            <p className="text-base xs:text-lg md:text-xl text-primary-foreground/90 mb-6 leading-relaxed font-medium max-w-prose">
               Visualize performance em segundos. Tome decisões com dados reais. Personalize cada métrica.
             </p>
 
-            <div className="mb-8 space-y-2 text-primary-foreground/85 text-base md:text-lg">
+            <div className="mb-8 space-y-2 text-primary-foreground/85 text-sm xs:text-base md:text-lg">
               <p>Investidor brasileiro sério gerencia 4-6 tipos de ativos diferentes.</p>
               <p>Mas 80% ainda usa planilhas desordenadas ou apps que não servem.</p>
               <p className="font-semibold text-primary-foreground">STOOTS muda isso - análise profissional, interface premium, preço que cabe no bolso.</p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 max-w-xl">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:max-w-xl">
               <Button 
                 size="lg" 
                 variant="btg"
                 neon={true}
-                className="h-14 px-8 text-base font-semibold"
+                className="w-full sm:w-auto"
                 onClick={() => scrollToSection("pricing")}
               >
                 Testar 30 Dias GRÁTIS
@@ -50,7 +50,7 @@ export const Hero = () => {
               <Button 
                 size="lg" 
                 variant="btgOutline"
-                className="h-14 px-8 text-base font-semibold"
+                className="w-full sm:w-auto"
                 onClick={() => scrollToSection("features")}
               >
                 Ver Demo em 2 Minutos
@@ -86,7 +86,7 @@ export const Hero = () => {
               muted 
               playsInline
               poster={heroDashboard}
-              className="w-full h-auto rounded-2xl shadow-premium transition-smooth animate-float"
+              className="w-full h-auto rounded-xl md:rounded-2xl shadow-premium transition-smooth animate-float"
               style={{ animationDuration: "4s" }}
             >
               <source src={platformVideo} type="video/mp4" />

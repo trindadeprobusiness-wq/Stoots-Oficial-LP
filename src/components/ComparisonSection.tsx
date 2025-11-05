@@ -1,6 +1,7 @@
 import { Check, X } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useRef, useEffect } from "react";
+import { Card } from "@/components/ui/card";
 
 export const ComparisonSection = () => {
   const titleReveal = useScrollReveal({ threshold: 0.2 });
@@ -13,34 +14,44 @@ export const ComparisonSection = () => {
     }
   }, [tableReveal.isVisible]);
 
+  // Structured comparison data
+  const comparisonData = [
+    { aspect: "Tempo Setup", planilha: "2-3h", appGratis: "20min", concorrente: "30min", stoots: "10min ✓" },
+    { aspect: "Análise Automática", planilha: "✗", appGratis: "Básica", concorrente: "✓", stoots: "✓ Avançada" },
+    { aspect: "Personalização", planilha: "Limitada", appGratis: "Muito limitada", concorrente: "Um pouco", stoots: "TOTAL ✓✓✓" },
+    { aspect: "Interface Premium", planilha: "✗", appGratis: "✗", concorrente: "✓", stoots: "✓" },
+    { aspect: "Preço/ano", planilha: "Grátis*", appGratis: "Grátis", concorrente: "R$ 180-300", stoots: "R$ 119,90 ✓" },
+    { aspect: "Diagrama do Cerrado", planilha: "✗", appGratis: "✗", concorrente: "✗", stoots: "EXCLUSIVO ✓✓✓" },
+  ];
+
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section className="py-16 md:py-32 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.1)_0%,transparent_65%)]" />
       
-      <div className="container px-6 mx-auto relative z-10">
+      <div className="container px-4 md:px-6 mx-auto relative z-10">
         <div 
           ref={titleReveal.ref}
-          className={`max-w-3xl mx-auto text-center mb-20 transition-all duration-700 ${
+          className={`max-w-3xl mx-auto text-center mb-12 md:mb-20 transition-all duration-700 ${
             titleReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <span className="inline-flex items-center gap-2 bg-btg-gold/10 backdrop-blur-sm border border-btg-gold/20 text-btg-gold px-6 py-2 rounded-full text-sm font-bold mb-6 shadow-lg shadow-btg-gold/10">
+          <span className="inline-flex items-center gap-2 bg-btg-gold/10 backdrop-blur-sm border border-btg-gold/20 text-btg-gold px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-bold mb-4 md:mb-6 shadow-lg shadow-btg-gold/10">
             POR QUE ESCOLHER STOOTS?
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-3xl xs:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
             STOOTS <span className="text-btg-gold">vs</span> Alternativas
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
             Compare e descubra por que STOOTS é a escolha inteligente para o seu patrimônio
           </p>
         </div>
 
-        {/* Comparison Table with 3D Animation */}
+        {/* DESKTOP: Comparison Table with 3D Animation (>= 768px) */}
         <div 
           ref={tableReveal.ref}
-          className="max-w-6xl mx-auto mb-0 perspective-container"
+          className="hidden md:block max-w-6xl mx-auto mb-0 perspective-container"
         >
           <div 
             ref={tableRef}
@@ -62,56 +73,29 @@ export const ComparisonSection = () => {
               
               {/* Table Rows */}
               <div className="divide-y divide-white/5">
-                <div className={`grid grid-cols-5 gap-6 p-6 hover:bg-white/5 transition-all duration-300 ${tableReveal.isVisible ? 'row-stagger' : 'opacity-0'}`} style={{ animationDelay: '0ms' }}>
-                  <div className="font-medium text-foreground">Tempo Setup</div>
-                  <div className="text-center text-muted-foreground">2-3h</div>
-                  <div className="text-center text-muted-foreground">20min</div>
-                  <div className="text-center text-muted-foreground">30min</div>
-                  <div className="text-center font-bold text-btg-gold">10min ✓</div>
-                </div>
-
-                <div className={`grid grid-cols-5 gap-6 p-6 hover:bg-white/5 transition-all duration-300 ${tableReveal.isVisible ? 'row-stagger' : 'opacity-0'}`} style={{ animationDelay: '100ms' }}>
-                  <div className="font-medium text-foreground">Análise Automática</div>
-                  <div className="text-center"><X className="w-6 h-6 text-destructive mx-auto" /></div>
-                  <div className="text-center text-muted-foreground">Básica</div>
-                  <div className="text-center"><Check className="w-6 h-6 text-accent mx-auto animated-check" style={{ animationDelay: '200ms' }} /></div>
-                  <div className="text-center font-bold text-btg-gold flex items-center justify-center gap-2">
-                    <Check className="w-6 h-6 animated-check" style={{ animationDelay: '300ms' }} />
-                    <span>Avançada</span>
+                {comparisonData.map((row, idx) => (
+                  <div 
+                    key={idx}
+                    className={`grid grid-cols-5 gap-6 p-6 hover:bg-white/5 transition-all duration-300 ${tableReveal.isVisible ? 'row-stagger' : 'opacity-0'}`} 
+                    style={{ animationDelay: `${idx * 100}ms` }}
+                  >
+                    <div className="font-medium text-foreground">{row.aspect}</div>
+                    <div className="text-center text-muted-foreground">
+                      {row.planilha === "✗" ? <X className="w-6 h-6 text-destructive mx-auto" /> : row.planilha}
+                    </div>
+                    <div className="text-center text-muted-foreground">
+                      {row.appGratis === "✗" ? <X className="w-6 h-6 text-destructive mx-auto" /> : row.appGratis}
+                    </div>
+                    <div className="text-center text-muted-foreground">
+                      {row.concorrente === "✗" ? <X className="w-6 h-6 text-destructive mx-auto" /> : 
+                       row.concorrente === "✓" ? <Check className="w-6 h-6 text-accent mx-auto animated-check" style={{ animationDelay: `${idx * 100 + 200}ms` }} /> :
+                       row.concorrente}
+                    </div>
+                    <div className="text-center font-bold text-btg-gold">
+                      {row.stoots.includes("✓") ? row.stoots : row.stoots}
+                    </div>
                   </div>
-                </div>
-
-                <div className={`grid grid-cols-5 gap-6 p-6 hover:bg-white/5 transition-all duration-300 ${tableReveal.isVisible ? 'row-stagger' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
-                  <div className="font-medium text-foreground">Personalização</div>
-                  <div className="text-center text-muted-foreground">Limitada</div>
-                  <div className="text-center text-muted-foreground">Muito limitada</div>
-                  <div className="text-center text-muted-foreground">Um pouco</div>
-                  <div className="text-center font-bold text-btg-gold">TOTAL ✓✓✓</div>
-                </div>
-
-                <div className={`grid grid-cols-5 gap-6 p-6 hover:bg-white/5 transition-all duration-300 ${tableReveal.isVisible ? 'row-stagger' : 'opacity-0'}`} style={{ animationDelay: '300ms' }}>
-                  <div className="font-medium text-foreground">Interface Premium</div>
-                  <div className="text-center"><X className="w-6 h-6 text-destructive mx-auto" /></div>
-                  <div className="text-center"><X className="w-6 h-6 text-destructive mx-auto" /></div>
-                  <div className="text-center"><Check className="w-6 h-6 text-accent mx-auto animated-check" style={{ animationDelay: '400ms' }} /></div>
-                  <div className="text-center"><Check className="w-6 h-6 text-btg-gold mx-auto animated-check" style={{ animationDelay: '500ms' }} /></div>
-                </div>
-
-                <div className={`grid grid-cols-5 gap-6 p-6 hover:bg-white/5 transition-all duration-300 ${tableReveal.isVisible ? 'row-stagger' : 'opacity-0'}`} style={{ animationDelay: '400ms' }}>
-                  <div className="font-medium text-foreground">Preço/ano</div>
-                  <div className="text-center text-muted-foreground">Grátis*</div>
-                  <div className="text-center text-muted-foreground">Grátis</div>
-                  <div className="text-center text-muted-foreground">R$ 180-300</div>
-                  <div className="text-center font-bold text-btg-gold">R$ 119,90 ✓</div>
-                </div>
-
-                <div className={`grid grid-cols-5 gap-6 p-6 hover:bg-white/5 transition-all duration-300 ${tableReveal.isVisible ? 'row-stagger' : 'opacity-0'}`} style={{ animationDelay: '500ms' }}>
-                  <div className="font-medium text-foreground">Diagrama do Cerrado</div>
-                  <div className="text-center"><X className="w-6 h-6 text-destructive mx-auto" /></div>
-                  <div className="text-center"><X className="w-6 h-6 text-destructive mx-auto" /></div>
-                  <div className="text-center"><X className="w-6 h-6 text-destructive mx-auto" /></div>
-                  <div className="text-center font-bold text-btg-gold">EXCLUSIVO ✓✓✓</div>
-                </div>
+                ))}
               </div>
 
               {/* Footer */}
@@ -122,6 +106,53 @@ export const ComparisonSection = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* MOBILE: Cards stacked (< 768px) */}
+        <div className="md:hidden space-y-4">
+          {comparisonData.map((row, idx) => (
+            <Card 
+              key={idx}
+              className="bg-background/95 backdrop-blur-sm border-white/10 p-4"
+            >
+              <h3 className="font-bold text-base xs:text-lg mb-3 text-foreground">
+                {row.aspect}
+              </h3>
+              
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between items-center">
+                  <span className="text-muted-foreground">Planilha:</span>
+                  <span className="font-medium">
+                    {row.planilha === "✗" ? <X className="w-5 h-5 text-destructive" /> : row.planilha}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-muted-foreground">App Grátis:</span>
+                  <span className="font-medium">
+                    {row.appGratis === "✗" ? <X className="w-5 h-5 text-destructive" /> : row.appGratis}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-muted-foreground">Concorrente:</span>
+                  <span className="font-medium">
+                    {row.concorrente === "✗" ? <X className="w-5 h-5 text-destructive" /> : 
+                     row.concorrente === "✓" ? <Check className="w-5 h-5 text-accent" /> : 
+                     row.concorrente}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center pt-2 border-t border-white/10">
+                  <span className="font-bold text-btg-gold">STOOTS:</span>
+                  <span className="font-bold text-btg-gold">{row.stoots}</span>
+                </div>
+              </div>
+            </Card>
+          ))}
+          
+          <Card className="bg-gradient-to-r from-primary/5 to-accent/5 backdrop-blur-sm border-white/10 p-4">
+            <p className="text-xs text-muted-foreground text-center">
+              *Tempo infinito = custo real
+            </p>
+          </Card>
         </div>
       </div>
     </section>
