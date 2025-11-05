@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 import { Menu, X } from "lucide-react";
+import CinematicThemeSwitcher from "@/components/ui/cinematic-theme-switcher";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,6 +37,7 @@ export const Navbar = () => {
             >
               Planos
             </button>
+            <CinematicThemeSwitcher />
             <Button 
               variant="btgOutline" 
               size="sm"
@@ -66,6 +68,9 @@ export const Navbar = () => {
         {isOpen && (
           <div className="md:hidden py-6 border-t border-primary-foreground/10 animate-fade-in">
             <div className="flex flex-col gap-4">
+              <div className="flex justify-center mb-2">
+                <CinematicThemeSwitcher />
+              </div>
               <button 
                 onClick={() => scrollToSection("features")}
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth text-sm font-medium text-left"
