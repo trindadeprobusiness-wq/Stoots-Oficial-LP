@@ -25,10 +25,6 @@ export const FAQ = () => {
       answer: "Atualmente o cadastro de ativos é manual, o que garante maior privacidade e controle. Estamos desenvolvendo integrações automáticas com as principais corretoras brasileiras para lançamento em breve."
     },
     {
-      question: "Como funciona o Diagrama do Cerrado?",
-      answer: "É uma metodologia de análise totalmente customizável. Você cria checklists personalizados com critérios específicos para avaliar seus investimentos. Cada critério recebe pontuação (+1 ou -1) e você obtém uma visão clara da qualidade de cada ativo. Incluímos um modelo profissional pronto para uso, mas você pode adaptá-lo completamente ao seu estilo."
-    },
-    {
       question: "Posso cancelar minha assinatura a qualquer momento?",
       answer: "Sim, não há períodos de fidelidade ou taxas de cancelamento. Você pode cancelar sua assinatura a qualquer momento pelo próprio painel. Após o cancelamento, manterá acesso até o final do período pago."
     }

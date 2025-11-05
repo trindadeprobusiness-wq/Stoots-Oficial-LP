@@ -22,19 +22,6 @@ export const Features = () => {
       image: featureDashboard
     },
     {
-      icon: ClipboardCheck,
-      title: "O Diagrama do Cerrado: Avalie Ativos do Seu Jeito",
-      subtitle: "Porque cada investidor tem sua própria tese.",
-      description: "Chega de copiar análises genéricas. No STOOTS, você cria seu próprio checklist personalizado para avaliar Ações e FIIs.",
-      details: [
-        "Perguntas Personalizadas: Defina seus critérios (fundamentos, dividendos, gestão, etc.)",
-        "Nota Automática: Cada 'Sim' vale +1, cada 'Não' vale -1. Você vê rapidamente quais ativos estão alinhados à sua estratégia.",
-        "Modelo Pronto Incluso: Comece com nosso template e ajuste conforme sua evolução como investidor."
-      ],
-      impact: "Pare de investir no escuro. Invista com base na SUA análise.",
-      image: featureAnalytics
-    },
-    {
       icon: Target,
       title: "Planejamento de Aportes Inteligente",
       subtitle: "Onde investir os próximos R$ 500? O STOOTS te mostra.",

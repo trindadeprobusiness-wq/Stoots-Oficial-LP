@@ -21,7 +21,6 @@ export const ComparisonSection = () => {
     { aspect: "Personalização", planilha: "Limitada", appGratis: "Muito limitada", concorrente: "Um pouco", stoots: "TOTAL ✓✓✓" },
     { aspect: "Interface Premium", planilha: "✗", appGratis: "✗", concorrente: "✓", stoots: "✓" },
     { aspect: "Preço/ano", planilha: "Grátis*", appGratis: "Grátis", concorrente: "R$ 180-300", stoots: "R$ 119,90 ✓" },
-    { aspect: "Diagrama do Cerrado", planilha: "✗", appGratis: "✗", concorrente: "✗", stoots: "EXCLUSIVO ✓✓✓" },
   ];
 
   return (

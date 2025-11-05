@@ -64,10 +64,6 @@ export const Pricing = () => {
                 <Check className="w-5 h-5 sm:w-6 sm:h-6 text-accent mt-0.5 flex-shrink-0" />
                 <span className="text-sm sm:text-base text-foreground/90">Rastreamento de até 5 ativos</span>
               </li>
-              <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 sm:w-6 sm:h-6 text-accent mt-0.5 flex-shrink-0" />
-                <span className="text-sm sm:text-base text-foreground/90">3 templates do Diagrama do Cerrado</span>
-              </li>
             </ul>
 
             <Button 
@@ -114,10 +110,6 @@ export const Pricing = () => {
               <li className="flex items-start gap-3">
                 <Check className="w-5 h-5 sm:w-6 sm:h-6 text-accent mt-0.5 flex-shrink-0" />
                 <span className="text-sm sm:text-base font-medium">Tudo do Plano Gratuito, mais:</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 sm:w-6 sm:h-6 text-accent mt-0.5 flex-shrink-0" />
-                <span className="text-sm sm:text-base">Diagrama do Cerrado - ilimitado</span>
               </li>
               <li className="flex items-start gap-3">
                 <Check className="w-5 h-5 sm:w-6 sm:h-6 text-accent mt-0.5 flex-shrink-0" />
@@ -198,7 +190,7 @@ export const Pricing = () => {
           }`}
         >
           <p className="text-center text-lg text-foreground/90 leading-relaxed">
-            <strong className="text-btg-gold">Você economiza R$ 180/ano:</strong> Kinvo e Trademap cobram R$ 180-300/ano. STOOTS oferece <strong className="text-foreground">MESMAS funcionalidades + Diagrama do Cerrado exclusivo</strong> por apenas <strong className="text-btg-gold">R$ 119,90/ano</strong>. Tecnologia premium, preço inteligente.
+            <strong className="text-btg-gold">Você economiza R$ 180/ano:</strong> Kinvo e Trademap cobram R$ 180-300/ano. STOOTS oferece <strong className="text-foreground">MESMAS funcionalidades</strong> por apenas <strong className="text-btg-gold">R$ 119,90/ano</strong>. Tecnologia premium, preço inteligente.
           </p>
         </div>
       </div>
