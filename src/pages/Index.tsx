@@ -5,7 +5,7 @@ import { TrackEverything } from "@/components/TrackEverything";
 import { ComparisonSection } from "@/components/ComparisonSection";
 import { ValueProposition } from "@/components/ValueProposition";
 import { Features } from "@/components/Features";
-import { ForecastFeature } from "@/components/ForecastFeature";
+import { ForecastFeatureMacbook } from "@/components/ForecastFeatureMacbook";
 import { MobileApp } from "@/components/MobileApp";
 import { FutureFeatures } from "@/components/FutureFeatures";
 import { Pricing } from "@/components/Pricing";
@@ -25,7 +25,7 @@ const Index = () => {
       <ComparisonSection />
       <ValueProposition />
       <Features />
-      <ForecastFeature />
+      <ForecastFeatureMacbook />
       <MobileApp />
       <FutureFeatures />
       <Pricing />
