@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { TextAnimate } from "@/components/ui/text-animate";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const FAQ = () => {
@@ -37,16 +38,18 @@ export const FAQ = () => {
     <section className="py-24 bg-background">
       <div className="container px-6 mx-auto">
         <div className="max-w-3xl mx-auto">
-          <div 
-            ref={titleReveal.ref}
-            className={`text-center mb-16 transition-all duration-700 ${
-              titleReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Dúvidas Frequentes
+              <TextAnimate animation="slideUp" by="word">
+                Dúvidas Frequentes
+              </TextAnimate>
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground">
+            <p 
+              ref={titleReveal.ref}
+              className={`text-lg md:text-xl text-muted-foreground transition-all duration-700 ${
+                titleReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
               Tudo o que você precisa saber sobre o STOOTS
             </p>
           </div>

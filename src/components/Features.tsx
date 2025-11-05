@@ -1,5 +1,6 @@
 import { BarChart3, ClipboardCheck, Target, PieChart } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { TextAnimate } from "@/components/ui/text-animate";
 import featureAnalytics from "@/assets/feature-analytics.jpg";
 import featurePlanning from "@/assets/feature-planning.jpg";
 import featureDashboard from "@/assets/feature-dashboard.jpg";
@@ -56,16 +57,18 @@ export const Features = () => {
   return (
     <section id="features" className="py-24 bg-secondary/30">
       <div className="container px-6 mx-auto">
-        <div 
-          ref={titleReveal.ref}
-          className={`max-w-3xl mx-auto text-center mb-16 transition-all duration-700 ${
-            titleReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
+        <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Funcionalidades que Transformam Sua Gestão
+            <TextAnimate animation="slideUp" by="word">
+              Funcionalidades que Transformam Sua Gestão
+            </TextAnimate>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground">
+          <p 
+            ref={titleReveal.ref}
+            className={`text-lg md:text-xl text-muted-foreground transition-all duration-700 ${
+              titleReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             Tudo que você precisa para dominar seus investimentos em uma plataforma elegante e poderosa.
           </p>
         </div>

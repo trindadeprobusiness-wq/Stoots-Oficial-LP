@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import { TextAnimate } from "@/components/ui/text-animate";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const Testimonials = () => {
@@ -29,16 +30,18 @@ export const Testimonials = () => {
   return (
     <section className="py-24 bg-secondary/30">
       <div className="container px-6 mx-auto">
-        <div 
-          ref={titleReveal.ref}
-          className={`max-w-3xl mx-auto text-center mb-16 transition-all duration-700 ${
-            titleReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
+        <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Investidores Que Conquistaram o Controle
+            <TextAnimate animation="slideUp" by="word">
+              Investidores Que Conquistaram o Controle
+            </TextAnimate>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground">
+          <p 
+            ref={titleReveal.ref}
+            className={`text-lg md:text-xl text-muted-foreground transition-all duration-700 ${
+              titleReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             Veja como o STOOTS está transformando a gestão financeira de pessoas como você
           </p>
         </div>

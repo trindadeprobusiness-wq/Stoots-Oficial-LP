@@ -1,5 +1,6 @@
 import { Zap, Droplets, AlertTriangle, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TextAnimate } from "@/components/ui/text-animate";
 import growthBg from "@/assets/growth-bg.jpg";
 
 export const FutureFeatures = () => {
@@ -39,7 +40,9 @@ export const FutureFeatures = () => {
       <div className="container px-6 mx-auto relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            O Futuro da Sua Gestão Financeira
+            <TextAnimate animation="slideUp" by="word">
+              O Futuro da Sua Gestão Financeira
+            </TextAnimate>
           </h2>
           <p className="text-lg md:text-xl text-primary-foreground/90">
             STOOTS está em constante evolução. Recursos inovadores sendo desenvolvidos para elevar ainda mais sua experiência.
